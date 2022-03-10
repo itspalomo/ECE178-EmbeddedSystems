@@ -1,0 +1,15 @@
+	component nios_system is
+		port (
+			clk_clk       : in  std_logic                    := 'X'; -- clk
+			reset_reset_n : in  std_logic                    := 'X'; -- reset_n
+			seg0_export   : out std_logic_vector(6 downto 0);        -- export
+			seg1_export   : out std_logic_vector(6 downto 0);        -- export
+			seg2_export   : out std_logic_vector(6 downto 0);        -- export
+			seg3_export   : out std_logic_vector(6 downto 0);        -- export
+			seg4_export   : out std_logic_vector(6 downto 0);        -- export
+			seg5_export   : out std_logic_vector(6 downto 0);        -- export
+			seg6_export   : out std_logic_vector(6 downto 0);        -- export
+			seg7_export   : out std_logic_vector(6 downto 0)         -- export
+		);
+	end component nios_system;
+

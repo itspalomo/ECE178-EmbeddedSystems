@@ -1,0 +1,31 @@
+# # File gsaved with Nlview version 6.3.8  2013-12-19 bk=1.2992 VDI=34 GEI=35
+# 
+preplace inst joseproc.hex_0 -pg 1 -lvl 3 -y 60
+preplace inst joseproc.hex_1 -pg 1 -lvl 3 -y 160
+preplace inst joseproc.hex_2 -pg 1 -lvl 3 -y 940
+preplace inst joseproc.jtag_uart_0 -pg 1 -lvl 3 -y 260
+preplace inst joseproc.hex_3 -pg 1 -lvl 3 -y 440
+preplace inst joseproc.hex_4 -pg 1 -lvl 3 -y 540
+preplace inst joseproc.hex_5 -pg 1 -lvl 3 -y 640
+preplace inst joseproc.clk_0 -pg 1 -lvl 1 -y 100
+preplace inst joseproc.hex_6 -pg 1 -lvl 3 -y 740
+preplace inst joseproc.onchip_memory2_0 -pg 1 -lvl 3 -y 360
+preplace inst joseproc.hex_7 -pg 1 -lvl 3 -y 840
+preplace inst joseproc -pg 1 -lvl 1 -y 40 -regy -20
+preplace inst joseproc.JoseProc -pg 1 -lvl 2 -y 40
+preplace netloc INTERCONNECT<net_container>joseproc</net_container>(MASTER)clk_0.clk_reset,(SLAVE)hex_6.reset,(SLAVE)JoseProc.reset_n,(SLAVE)hex_3.reset,(SLAVE)hex_1.reset,(SLAVE)jtag_uart_0.reset,(SLAVE)hex_0.reset,(SLAVE)hex_4.reset,(SLAVE)hex_2.reset,(SLAVE)hex_7.reset,(MASTER)JoseProc.jtag_debug_module_reset,(SLAVE)onchip_memory2_0.reset1,(SLAVE)hex_5.reset) 1 1 2 280 990 610
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)joseproc.clk,(SLAVE)clk_0.clk_in) 1 0 1 NJ
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)hex_2.external_connection,(SLAVE)joseproc.hex2) 1 0 3 NJ 970 NJ 970 NJ
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)joseproc.hex1,(SLAVE)hex_1.external_connection) 1 0 3 NJ 190 NJ 190 NJ
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)joseproc.reset,(SLAVE)clk_0.clk_in_reset) 1 0 1 NJ
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)hex_5.external_connection,(SLAVE)joseproc.hex5) 1 0 3 NJ 670 NJ 670 NJ
+preplace netloc FAN_OUT<net_container>joseproc</net_container>(SLAVE)hex_3.clk,(SLAVE)jtag_uart_0.clk,(SLAVE)hex_0.clk,(SLAVE)hex_4.clk,(MASTER)clk_0.clk,(SLAVE)hex_1.clk,(SLAVE)hex_6.clk,(SLAVE)hex_7.clk,(SLAVE)hex_5.clk,(SLAVE)hex_2.clk,(SLAVE)JoseProc.clk,(SLAVE)onchip_memory2_0.clk1) 1 1 2 260 890 590
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)hex_0.external_connection,(SLAVE)joseproc.hex0) 1 0 3 NJ 170 NJ 170 NJ
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)hex_7.external_connection,(SLAVE)joseproc.hex7) 1 0 3 NJ 870 NJ 870 NJ
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)hex_3.external_connection,(SLAVE)joseproc.hex3) 1 0 3 NJ 470 NJ 470 NJ
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)hex_6.external_connection,(SLAVE)joseproc.hex6) 1 0 3 NJ 770 NJ 770 NJ
+preplace netloc EXPORT<net_container>joseproc</net_container>(SLAVE)joseproc.hex4,(SLAVE)hex_4.external_connection) 1 0 3 NJ 570 NJ 570 NJ
+preplace netloc INTERCONNECT<net_container>joseproc</net_container>(SLAVE)hex_5.s1,(SLAVE)hex_2.s1,(SLAVE)JoseProc.jtag_debug_module,(SLAVE)hex_0.s1,(SLAVE)hex_1.s1,(MASTER)JoseProc.instruction_master,(SLAVE)jtag_uart_0.avalon_jtag_slave,(MASTER)JoseProc.data_master,(SLAVE)onchip_memory2_0.s1,(SLAVE)hex_3.s1,(SLAVE)hex_4.s1,(SLAVE)hex_6.s1,(SLAVE)hex_7.s1) 1 1 2 280 30 530
+preplace netloc POINT_TO_POINT<net_container>joseproc</net_container>(MASTER)JoseProc.d_irq,(SLAVE)jtag_uart_0.irq) 1 2 1 570
+levelinfo -pg 1 0 50 820
+levelinfo -hier joseproc 60 90 310 660 810
