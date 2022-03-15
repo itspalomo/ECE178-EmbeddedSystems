@@ -1,7 +1,6 @@
-quartus install/
 **/*.exe
 **/*.tar
 *.exe
 *.qdz
 *.tar
-C:\Users\macie\Documents\spring22\ECE178\quartus install\
+178hw3\db
