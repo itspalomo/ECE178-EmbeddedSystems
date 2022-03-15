@@ -1,6 +1,7 @@
 /*Jose Maciel Torres
 part 5 hw2
-
+Note memory of OCM only runs from 0x00000000 to 0x00000fff
+the saved location for the fliped bits is at memory 0x500
 */
 
 .equ HEX7, 0x00002000
