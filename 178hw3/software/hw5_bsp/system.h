@@ -4,7 +4,7 @@
  * Machine generated for CPU 'hw3proc' in SOPC Builder design 'hw3proc'
  * SOPC Builder design path: ../../hw3proc.sopcinfo
  *
- * Generated: Mon Mar 14 22:58:24 PDT 2022
+ * Generated: Tue Mar 15 08:34:27 PDT 2022
  */
 
 /*
@@ -152,19 +152,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x20f8
+#define ALT_STDERR_BASE 0x2108
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x20f8
+#define ALT_STDIN_BASE 0x2108
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x20f8
+#define ALT_STDOUT_BASE 0x2108
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
@@ -177,8 +177,8 @@
  *
  */
 
-#define ALT_MAX_FD 32
-#define ALT_SYS_CLK HR_TIMER
+#define ALT_MAX_FD 4
+#define ALT_SYS_CLK none
 #define ALT_TIMESTAMP_CLK none
 
 
@@ -188,7 +188,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_0 altera_avalon_pio
-#define HEX_0_BASE 0x20b0
+#define HEX_0_BASE 0x20c0
 #define HEX_0_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_0_CAPTURE 0
@@ -215,7 +215,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_1 altera_avalon_pio
-#define HEX_1_BASE 0x20a0
+#define HEX_1_BASE 0x20b0
 #define HEX_1_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_1_CAPTURE 0
@@ -242,7 +242,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_2 altera_avalon_pio
-#define HEX_2_BASE 0x2090
+#define HEX_2_BASE 0x20a0
 #define HEX_2_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_2_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_2_CAPTURE 0
@@ -269,7 +269,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_3 altera_avalon_pio
-#define HEX_3_BASE 0x2080
+#define HEX_3_BASE 0x2090
 #define HEX_3_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_3_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_3_CAPTURE 0
@@ -296,7 +296,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_4 altera_avalon_pio
-#define HEX_4_BASE 0x2070
+#define HEX_4_BASE 0x2080
 #define HEX_4_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_4_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_4_CAPTURE 0
@@ -323,7 +323,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_5 altera_avalon_pio
-#define HEX_5_BASE 0x2060
+#define HEX_5_BASE 0x2070
 #define HEX_5_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_5_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_5_CAPTURE 0
@@ -350,7 +350,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_6 altera_avalon_pio
-#define HEX_6_BASE 0x2050
+#define HEX_6_BASE 0x2060
 #define HEX_6_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_6_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_6_CAPTURE 0
@@ -377,7 +377,7 @@
  */
 
 #define ALT_MODULE_CLASS_hex_7 altera_avalon_pio
-#define HEX_7_BASE 0x2040
+#define HEX_7_BASE 0x2050
 #define HEX_7_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_7_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_7_CAPTURE 0
@@ -430,7 +430,7 @@
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x20f8
+#define JTAG_UART_0_BASE 0x2108
 #define JTAG_UART_0_IRQ 0
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -448,7 +448,7 @@
  */
 
 #define ALT_MODULE_CLASS_ledg altera_avalon_pio
-#define LEDG_BASE 0x20c0
+#define LEDG_BASE 0x20d0
 #define LEDG_BIT_CLEARING_EDGE_REGISTER 0
 #define LEDG_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LEDG_CAPTURE 0
@@ -475,7 +475,7 @@
  */
 
 #define ALT_MODULE_CLASS_ledr altera_avalon_pio
-#define LEDR_BASE 0x20d0
+#define LEDR_BASE 0x20e0
 #define LEDR_BIT_CLEARING_EDGE_REGISTER 0
 #define LEDR_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LEDR_CAPTURE 0
@@ -526,6 +526,33 @@
 
 
 /*
+ * pushbuttons configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_pushbuttons altera_avalon_pio
+#define PUSHBUTTONS_BASE 0x2040
+#define PUSHBUTTONS_BIT_CLEARING_EDGE_REGISTER 0
+#define PUSHBUTTONS_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define PUSHBUTTONS_CAPTURE 0
+#define PUSHBUTTONS_DATA_WIDTH 4
+#define PUSHBUTTONS_DO_TEST_BENCH_WIRING 0
+#define PUSHBUTTONS_DRIVEN_SIM_VALUE 0
+#define PUSHBUTTONS_EDGE_TYPE "NONE"
+#define PUSHBUTTONS_FREQ 50000000
+#define PUSHBUTTONS_HAS_IN 1
+#define PUSHBUTTONS_HAS_OUT 0
+#define PUSHBUTTONS_HAS_TRI 0
+#define PUSHBUTTONS_IRQ -1
+#define PUSHBUTTONS_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define PUSHBUTTONS_IRQ_TYPE "NONE"
+#define PUSHBUTTONS_NAME "/dev/pushbuttons"
+#define PUSHBUTTONS_RESET_VALUE 0
+#define PUSHBUTTONS_SPAN 16
+#define PUSHBUTTONS_TYPE "altera_avalon_pio"
+
+
+/*
  * sram_0 configuration
  *
  */
@@ -545,7 +572,7 @@
  */
 
 #define ALT_MODULE_CLASS_switches altera_avalon_pio
-#define SWITCHES_BASE 0x20e0
+#define SWITCHES_BASE 0x20f0
 #define SWITCHES_BIT_CLEARING_EDGE_REGISTER 0
 #define SWITCHES_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SWITCHES_CAPTURE 0
@@ -572,13 +599,13 @@
  */
 
 #define ALT_MODULE_CLASS_sysid_qsys_0 altera_avalon_sysid_qsys
-#define SYSID_QSYS_0_BASE 0x20f0
+#define SYSID_QSYS_0_BASE 0x2100
 #define SYSID_QSYS_0_ID 0
 #define SYSID_QSYS_0_IRQ -1
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1646718024
+#define SYSID_QSYS_0_TIMESTAMP 1647357981
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 
