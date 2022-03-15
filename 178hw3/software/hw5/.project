@@ -3,6 +3,7 @@
 	<name>hw5</name>
 	<comment></comment>
 	<projects>
+		<project>hw5_bsp</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>

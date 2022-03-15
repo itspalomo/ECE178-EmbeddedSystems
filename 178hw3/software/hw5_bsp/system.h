@@ -4,7 +4,7 @@
  * Machine generated for CPU 'hw3proc' in SOPC Builder design 'hw3proc'
  * SOPC Builder design path: ../../hw3proc.sopcinfo
  *
- * Generated: Tue Mar 15 08:34:27 PDT 2022
+ * Generated: Tue Mar 15 11:02:06 PDT 2022
  */
 
 /*
@@ -605,7 +605,7 @@
 #define SYSID_QSYS_0_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_QSYS_0_NAME "/dev/sysid_qsys_0"
 #define SYSID_QSYS_0_SPAN 8
-#define SYSID_QSYS_0_TIMESTAMP 1647357981
+#define SYSID_QSYS_0_TIMESTAMP 1647366680
 #define SYSID_QSYS_0_TYPE "altera_avalon_sysid_qsys"
 
 

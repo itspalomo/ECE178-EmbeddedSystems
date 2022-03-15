@@ -1,5 +1,5 @@
 Info: Starting: Create block symbol file (.bsf)
-Info: qsys-generate D:\Spring_2022\ECE178-EmbeddedSystems\178hw3\hw3proc.qsys --block-symbol-file --output-directory=D:\Spring_2022\ECE178-EmbeddedSystems\178hw3\hw3proc --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\macie\Documents\spring22\ECE178\178hw3\hw3proc.qsys --block-symbol-file --output-directory=C:\Users\macie\Documents\spring22\ECE178\178hw3\hw3proc --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading 178hw3/hw3proc.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.1]
@@ -56,7 +56,7 @@ Info: qsys-generate succeeded.
 Info: Finished: Create block symbol file (.bsf)
 Info: 
 Info: Starting: Create HDL design files for synthesis
-Info: qsys-generate D:\Spring_2022\ECE178-EmbeddedSystems\178hw3\hw3proc.qsys --synthesis=VERILOG --output-directory=D:\Spring_2022\ECE178-EmbeddedSystems\178hw3\hw3proc\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
+Info: qsys-generate C:\Users\macie\Documents\spring22\ECE178\178hw3\hw3proc.qsys --synthesis=VERILOG --output-directory=C:\Users\macie\Documents\spring22\ECE178\178hw3\hw3proc\synthesis --family="Cyclone IV E" --part=EP4CE115F29C7
 Progress: Loading 178hw3/hw3proc.qsys
 Progress: Reading input file
 Progress: Adding clk_0 [clock_source 17.1]
@@ -111,65 +111,65 @@ Info: hw3proc.sysid_qsys_0: System ID is not assigned automatically. Edit the Sy
 Info: hw3proc.sysid_qsys_0: Time stamp will be automatically updated when this component is generated.
 Info: hw3proc: Generating hw3proc "hw3proc" for QUARTUS_SYNTH
 Info: hex_0: Starting RTL generation for module 'hw3proc_hex_0'
-Info: hex_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_hex_0 --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0002_hex_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0002_hex_0_gen//hw3proc_hex_0_component_configuration.pl  --do_build_sim=0  ]
+Info: hex_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_hex_0 --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0002_hex_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0002_hex_0_gen//hw3proc_hex_0_component_configuration.pl  --do_build_sim=0  ]
 Info: hex_0: Done RTL generation for module 'hw3proc_hex_0'
 Info: hex_0: "hw3proc" instantiated altera_avalon_pio "hex_0"
 Info: hr_timer: Starting RTL generation for module 'hw3proc_hr_timer'
-Info: hr_timer:   Generation command is [exec C:/intelFPGA_lite/17.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/17.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=hw3proc_hr_timer --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0003_hr_timer_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0003_hr_timer_gen//hw3proc_hr_timer_component_configuration.pl  --do_build_sim=0  ]
+Info: hr_timer:   Generation command is [exec C:/intelFPGA_lite/17.1/quartus/bin64//perl/bin/perl.exe -I C:/intelFPGA_lite/17.1/quartus/bin64//perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_timer/generate_rtl.pl --name=hw3proc_hr_timer --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0003_hr_timer_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0003_hr_timer_gen//hw3proc_hr_timer_component_configuration.pl  --do_build_sim=0  ]
 Info: hr_timer: Done RTL generation for module 'hw3proc_hr_timer'
 Info: hr_timer: "hw3proc" instantiated altera_avalon_timer "hr_timer"
 Info: hw3proc: Starting RTL generation for module 'hw3proc_hw3proc'
-Info: hw3proc:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/eperlcmd.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=hw3proc_hw3proc --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0004_hw3proc_gen/ --quartus_bindir=C:/intelfpga_lite/17.1/quartus/bin64 --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0004_hw3proc_gen//hw3proc_hw3proc_processor_configuration.pl  --do_build_sim=0  ]
-Info: hw3proc: # 2022.03.15 08:26:28 (*) Starting Nios II generation
-Info: hw3proc: # 2022.03.15 08:26:28 (*)   Checking for plaintext license.
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Couldn't query license setup in Quartus directory C:/intelfpga_lite/17.1/quartus/bin64
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   LM_LICENSE_FILE environment variable is empty
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Plaintext license not found.
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Checking for encrypted license (non-evaluation).
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Couldn't query license setup in Quartus directory C:/intelfpga_lite/17.1/quartus/bin64
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   LM_LICENSE_FILE environment variable is empty
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Elaborating CPU configuration settings
-Info: hw3proc: # 2022.03.15 08:26:29 (*)   Creating all objects for CPU
-Info: hw3proc: # 2022.03.15 08:26:29 (*)     Testbench
-Info: hw3proc: # 2022.03.15 08:26:29 (*)     Instruction decoding
-Info: hw3proc: # 2022.03.15 08:26:29 (*)       Instruction fields
-Info: hw3proc: # 2022.03.15 08:26:30 (*)       Instruction decodes
-Info: hw3proc: # 2022.03.15 08:26:30 (*)       Signals for RTL simulation waveforms
-Info: hw3proc: # 2022.03.15 08:26:30 (*)       Instruction controls
-Info: hw3proc: # 2022.03.15 08:26:30 (*)     Pipeline frontend
-Info: hw3proc: # 2022.03.15 08:26:30 (*)     Pipeline backend
-Info: hw3proc: # 2022.03.15 08:26:32 (*)   Generating RTL from CPU objects
-Info: hw3proc: # 2022.03.15 08:26:34 (*)   Creating encrypted RTL
-Info: hw3proc: # 2022.03.15 08:26:34 (*) Done Nios II generation
+Info: hw3proc:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/eperlcmd.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/cpu_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/nios_lib -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2 -I C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/nios2_ip/altera_nios2/generate_rtl.epl --name=hw3proc_hw3proc --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0004_hw3proc_gen/ --quartus_bindir=C:/intelfpga_lite/17.1/quartus/bin64 --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0004_hw3proc_gen//hw3proc_hw3proc_processor_configuration.pl  --do_build_sim=0  ]
+Info: hw3proc: # 2022.03.15 10:51:35 (*) Starting Nios II generation
+Info: hw3proc: # 2022.03.15 10:51:35 (*)   Checking for plaintext license.
+Info: hw3proc: # 2022.03.15 10:51:36 (*)   Couldn't query license setup in Quartus directory C:/intelfpga_lite/17.1/quartus/bin64
+Info: hw3proc: # 2022.03.15 10:51:36 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: hw3proc: # 2022.03.15 10:51:36 (*)   LM_LICENSE_FILE environment variable is empty
+Info: hw3proc: # 2022.03.15 10:51:36 (*)   Plaintext license not found.
+Info: hw3proc: # 2022.03.15 10:51:36 (*)   Checking for encrypted license (non-evaluation).
+Info: hw3proc: # 2022.03.15 10:51:37 (*)   Couldn't query license setup in Quartus directory C:/intelfpga_lite/17.1/quartus/bin64
+Info: hw3proc: # 2022.03.15 10:51:37 (*)   Defaulting to contents of LM_LICENSE_FILE environment variable
+Info: hw3proc: # 2022.03.15 10:51:37 (*)   LM_LICENSE_FILE environment variable is empty
+Info: hw3proc: # 2022.03.15 10:51:37 (*)   Encrypted license not found.  Defaulting to OCP evaluation license (produces a time-limited SOF)
+Info: hw3proc: # 2022.03.15 10:51:37 (*)   Elaborating CPU configuration settings
+Info: hw3proc: # 2022.03.15 10:51:37 (*)   Creating all objects for CPU
+Info: hw3proc: # 2022.03.15 10:51:37 (*)     Testbench
+Info: hw3proc: # 2022.03.15 10:51:37 (*)     Instruction decoding
+Info: hw3proc: # 2022.03.15 10:51:37 (*)       Instruction fields
+Info: hw3proc: # 2022.03.15 10:51:37 (*)       Instruction decodes
+Info: hw3proc: # 2022.03.15 10:51:38 (*)       Signals for RTL simulation waveforms
+Info: hw3proc: # 2022.03.15 10:51:38 (*)       Instruction controls
+Info: hw3proc: # 2022.03.15 10:51:38 (*)     Pipeline frontend
+Info: hw3proc: # 2022.03.15 10:51:38 (*)     Pipeline backend
+Info: hw3proc: # 2022.03.15 10:51:40 (*)   Generating RTL from CPU objects
+Info: hw3proc: # 2022.03.15 10:51:43 (*)   Creating encrypted RTL
+Info: hw3proc: # 2022.03.15 10:51:44 (*) Done Nios II generation
 Info: hw3proc: Done RTL generation for module 'hw3proc_hw3proc'
 Info: hw3proc: "hw3proc" instantiated altera_nios2_qsys "hw3proc"
 Info: jtag_uart_0: Starting RTL generation for module 'hw3proc_jtag_uart_0'
-Info: jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=hw3proc_jtag_uart_0 --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0005_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0005_jtag_uart_0_gen//hw3proc_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
+Info: jtag_uart_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_jtag_uart/generate_rtl.pl --name=hw3proc_jtag_uart_0 --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0005_jtag_uart_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0005_jtag_uart_0_gen//hw3proc_jtag_uart_0_component_configuration.pl  --do_build_sim=0  ]
 Info: jtag_uart_0: Done RTL generation for module 'hw3proc_jtag_uart_0'
 Info: jtag_uart_0: "hw3proc" instantiated altera_avalon_jtag_uart "jtag_uart_0"
 Info: ledg: Starting RTL generation for module 'hw3proc_ledg'
-Info: ledg:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_ledg --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0006_ledg_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0006_ledg_gen//hw3proc_ledg_component_configuration.pl  --do_build_sim=0  ]
+Info: ledg:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_ledg --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0006_ledg_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0006_ledg_gen//hw3proc_ledg_component_configuration.pl  --do_build_sim=0  ]
 Info: ledg: Done RTL generation for module 'hw3proc_ledg'
 Info: ledg: "hw3proc" instantiated altera_avalon_pio "ledg"
 Info: ledr: Starting RTL generation for module 'hw3proc_ledr'
-Info: ledr:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_ledr --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0007_ledr_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0007_ledr_gen//hw3proc_ledr_component_configuration.pl  --do_build_sim=0  ]
+Info: ledr:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_ledr --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0007_ledr_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0007_ledr_gen//hw3proc_ledr_component_configuration.pl  --do_build_sim=0  ]
 Info: ledr: Done RTL generation for module 'hw3proc_ledr'
 Info: ledr: "hw3proc" instantiated altera_avalon_pio "ledr"
 Info: onchip_memory2_0: Starting RTL generation for module 'hw3proc_onchip_memory2_0'
-Info: onchip_memory2_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=hw3proc_onchip_memory2_0 --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0008_onchip_memory2_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0008_onchip_memory2_0_gen//hw3proc_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
+Info: onchip_memory2_0:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2 -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_onchip_memory2/generate_rtl.pl --name=hw3proc_onchip_memory2_0 --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0008_onchip_memory2_0_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0008_onchip_memory2_0_gen//hw3proc_onchip_memory2_0_component_configuration.pl  --do_build_sim=0  ]
 Info: onchip_memory2_0: Done RTL generation for module 'hw3proc_onchip_memory2_0'
 Info: onchip_memory2_0: "hw3proc" instantiated altera_avalon_onchip_memory2 "onchip_memory2_0"
 Info: pushbuttons: Starting RTL generation for module 'hw3proc_pushbuttons'
-Info: pushbuttons:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_pushbuttons --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0009_pushbuttons_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0009_pushbuttons_gen//hw3proc_pushbuttons_component_configuration.pl  --do_build_sim=0  ]
+Info: pushbuttons:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_pushbuttons --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0009_pushbuttons_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0009_pushbuttons_gen//hw3proc_pushbuttons_component_configuration.pl  --do_build_sim=0  ]
 Info: pushbuttons: Done RTL generation for module 'hw3proc_pushbuttons'
 Info: pushbuttons: "hw3proc" instantiated altera_avalon_pio "pushbuttons"
 Info: sram_0: Starting Generation of the SRAM Controller
 Info: sram_0: "hw3proc" instantiated altera_up_avalon_sram "sram_0"
 Info: switches: Starting RTL generation for module 'hw3proc_switches'
-Info: switches:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_switches --dir=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0011_switches_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_5371789841629639788.dir/0011_switches_gen//hw3proc_switches_component_configuration.pl  --do_build_sim=0  ]
+Info: switches:   Generation command is [exec C:/intelfpga_lite/17.1/quartus/bin64/perl/bin/perl.exe -I C:/intelfpga_lite/17.1/quartus/bin64/perl/lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/europa -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin/perl_lib -I C:/intelfpga_lite/17.1/quartus/sopc_builder/bin -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/common -I C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio -- C:/intelfpga_lite/17.1/quartus/../ip/altera/sopc_builder_ip/altera_avalon_pio/generate_rtl.pl --name=hw3proc_switches --dir=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0011_switches_gen/ --quartus_dir=C:/intelfpga_lite/17.1/quartus --verilog --config=C:/Users/macie/AppData/Local/Temp/alt9066_2727910443548167280.dir/0011_switches_gen//hw3proc_switches_component_configuration.pl  --do_build_sim=0  ]
 Info: switches: Done RTL generation for module 'hw3proc_switches'
 Info: switches: "hw3proc" instantiated altera_avalon_pio "switches"
 Info: sysid_qsys_0: "hw3proc" instantiated altera_avalon_sysid_qsys "sysid_qsys_0"
@@ -206,23 +206,23 @@ Info: router_002: "mm_interconnect_0" instantiated altera_merlin_router "router_
 Info: router_003: "mm_interconnect_0" instantiated altera_merlin_router "router_003"
 Info: router_005: "mm_interconnect_0" instantiated altera_merlin_router "router_005"
 Info: hw3proc_data_master_limiter: "mm_interconnect_0" instantiated altera_merlin_traffic_limiter "hw3proc_data_master_limiter"
-Info: Reusing file D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc/synthesis/submodules/altera_avalon_sc_fifo.v
+Info: Reusing file C:/Users/macie/Documents/spring22/ECE178/178hw3/hw3proc/synthesis/submodules/altera_avalon_sc_fifo.v
 Info: sram_0_avalon_sram_slave_burst_adapter: "mm_interconnect_0" instantiated altera_merlin_burst_adapter "sram_0_avalon_sram_slave_burst_adapter"
-Info: Reusing file D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc/synthesis/submodules/altera_avalon_st_pipeline_base.v
+Info: Reusing file C:/Users/macie/Documents/spring22/ECE178/178hw3/hw3proc/synthesis/submodules/altera_avalon_st_pipeline_base.v
 Info: cmd_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux"
 Info: cmd_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "cmd_demux_001"
 Info: cmd_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux"
 Info: cmd_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "cmd_mux_001"
-Info: Reusing file D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/macie/Documents/spring22/ECE178/178hw3/hw3proc/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_demux: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux"
 Info: rsp_demux_001: "mm_interconnect_0" instantiated altera_merlin_demultiplexer "rsp_demux_001"
 Info: rsp_mux: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux"
-Info: Reusing file D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/macie/Documents/spring22/ECE178/178hw3/hw3proc/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: rsp_mux_001: "mm_interconnect_0" instantiated altera_merlin_multiplexer "rsp_mux_001"
-Info: Reusing file D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc/synthesis/submodules/altera_merlin_arbitrator.sv
+Info: Reusing file C:/Users/macie/Documents/spring22/ECE178/178hw3/hw3proc/synthesis/submodules/altera_merlin_arbitrator.sv
 Info: sram_0_avalon_sram_slave_rsp_width_adapter: "mm_interconnect_0" instantiated altera_merlin_width_adapter "sram_0_avalon_sram_slave_rsp_width_adapter"
-Info: Reusing file D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc/synthesis/submodules/altera_merlin_address_alignment.sv
-Info: Reusing file D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
+Info: Reusing file C:/Users/macie/Documents/spring22/ECE178/178hw3/hw3proc/synthesis/submodules/altera_merlin_address_alignment.sv
+Info: Reusing file C:/Users/macie/Documents/spring22/ECE178/178hw3/hw3proc/synthesis/submodules/altera_merlin_burst_uncompressor.sv
 Info: avalon_st_adapter: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter"
 Info: avalon_st_adapter_001: "mm_interconnect_0" instantiated altera_avalon_st_adapter "avalon_st_adapter_001"
 Info: error_adapter_0: "avalon_st_adapter" instantiated error_adapter "error_adapter_0"

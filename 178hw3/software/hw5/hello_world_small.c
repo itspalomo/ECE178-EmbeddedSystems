@@ -115,17 +115,21 @@ volatile int hex6 = 0x00002060;
 volatile int hex7 = 0x00002050;
 
 
-#define HEXVAL_0 0b11000000
-#define HEXVAL_1 0b11111001
-#define HEXVAL_2 0b10100100
-#define HEXVAL_3 0b10110000
-#define HEXVAL_4 0b10011001
-#define HEXVAL_5 0b10010010
-#define HEXVAL_6 0b10000010
-#define HEXVAL_7 0b11111000
-#define HEXVAL_8 0b10000000
-#define HEXVAL_9 0b10011000
-#define HEXVAL_CLEAR 0b11111111
+#define HEXVAL_0 0b11000000 /*0*/
+#define HEXVAL_1 0b11111001 /*1*/
+#define HEXVAL_2 0b10100100 /*2*/
+#define HEXVAL_3 0b10110000 /*3*/
+#define HEXVAL_4 0b10011001 /*4*/
+#define HEXVAL_5 0b10010010 /*5*/
+#define HEXVAL_6 0b10000010 /*6*/
+#define HEXVAL_7 0b11111000 /*7*/
+#define HEXVAL_8 0b10000000 /*8*/
+#define HEXVAL_9 0b10011000 /*9*/
+#define HEXVAL_9 0b10011000 /*A*/
+#define HEXVAL_9 0b10011000 /*b*/
+#define HEXVAL_9 0b10011000 /*c*/
+#define HEXVAL_9 0b10011000 /*d*/
+#define HEXVAL_CLEAR 0b11111111 /*Clear*/
 
 int hextable[] = {HEXVAL_0, HEXVAL_1, HEXVAL_2, HEXVAL_3, HEXVAL_4,
 					HEXVAL_5, HEXVAL_6, HEXVAL_7, HEXVAL_8, HEXVAL_9};
@@ -138,23 +142,8 @@ void clearhex();
 
 int main()
 { 
-	char mode;
-  alt_putstr("For part 1 enter a for part 2 enter b: ");
 
-  mode = alt_getchar();
-
-  while(mode != 'a' || mode != 'b')
-  {
-	  alt_putstr("\nYou entered: ");
-	  alt_putchar(mode);
-	  alt_putstr("\nPlease enter a for part 1 or b for part 2: ");
-	  mode = alt_getchar();
-  }
-
-  if (mode == 'a')
-	  part1();
-  else
-	  part2();
+  part1();
 
 
   return 0;
@@ -180,9 +169,6 @@ void part1()
 	alt_putstr("\nPART 1: \n Please enter 1-4 to turn on the respective Green LED on the DE2. \n");
 	alt_putstr("\nEnter 5 or 6 to clear the LEDs \n");
 
-	alt_putstr("\nPlease enter a for part 1 or b for part 2: ");
-
-
 	while (1)
 	{
 		led = alt_getchar();
@@ -194,23 +180,26 @@ void part1()
 			break;
 
 		case '2':
-			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 1);
+			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 0b0010);
 			break;
 
 		case '3':
-			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 1);
+			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 0b0100);
 			break;
 
 		case '4':
-			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 1);
+			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 0b1000);
+			break;
+
+		case '\n':
 			break;
 
 		case '5':
-			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 0b1111);
+			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 0b0000);
 			break;
 
 		case '6':
-			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 0b1111);
+			IOWR_ALTERA_AVALON_PIO_DATA(ledg, 0b0000);
 			break;
 
 		default:
@@ -221,7 +210,13 @@ void part1()
 	}
 }
 
+void part2()
+{
+	alt_8 shex;
+	alt_u8 uhex;
 
+
+}
 
 
 

@@ -155,7 +155,7 @@ ACDS_VERSION := 17.1
 
 # This following BUILD_NUMBER comment indicates the build number of the tool 
 # used to generate this makefile. 
-# BUILD_NUMBER: 593
+# BUILD_NUMBER: 590
 
 # Optimize for simulation
 SIM_OPTIMIZE ?= 0
