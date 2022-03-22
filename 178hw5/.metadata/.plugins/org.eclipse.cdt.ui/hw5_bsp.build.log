@@ -1,6 +1,6 @@
-08:34:28 **** Clean-only build of configuration Nios II for project hw5_bsp ****
-make clean 
-[BSP clean complete]
+01:32:45 **** Incremental Build of configuration Nios II for project hw5_bsp ****
+make all 
+[BSP build complete]
 
-08:34:28 Build Finished (took 578ms)
+01:32:46 Build Finished (took 943ms)
 

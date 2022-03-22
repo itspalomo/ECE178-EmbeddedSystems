@@ -91,6 +91,7 @@
  */
 
 #include <stdio.h>
+#include <math.h>
 #include "system.h"
 #include "io.h"
 #include "sys/alt_stdio.h"
@@ -129,6 +130,7 @@ volatile int hex7 = 0x00002050;
 #define HEXVAL_9 0b10011000 /*b*/
 #define HEXVAL_9 0b10011000 /*c*/
 #define HEXVAL_9 0b10011000 /*d*/
+#define HEXVAL_NEG 0b0111111 /*d*/
 #define HEXVAL_CLEAR 0b11111111 /*Clear*/
 
 int hextable[] = {HEXVAL_0, HEXVAL_1, HEXVAL_2, HEXVAL_3, HEXVAL_4,
@@ -138,12 +140,13 @@ void part1();
 void part2();
 
 void clearhex();
+void decimal_to_hex(alt_u8);
 
 
 int main()
 { 
 
-  part1();
+  part2();
 
 
   return 0;
@@ -212,12 +215,53 @@ void part1()
 
 void part2()
 {
-	alt_8 shex;
 	alt_u8 uhex;
+	alt_u16 check;
 
+	alt_putstr("\nPART 2: \n Use switches to get 8 bit representation on HEX0-HEX2. \n");
+	alt_putstr("\nThe 9th switch, sw[8] represents signed(on) vs unsigned(off) representation. \n");
 
+	while (1)
+		{
+			check = IORD_ALTERA_AVALON_PIO_DATA(switch_base);
+			uhex = check & 0b11111111;
+			if (check >= 0b0000000100000000)
+			{
+				if (uhex < 0b10000000)
+				{
+					uhex &= 0b01111111;
+
+					decimal_to_hex(uhex);
+				}else
+				{
+					if (uhex == 0b10000000)
+						uhex = 0b00000000;
+					else
+						uhex = ~(uhex)+1;
+
+					decimal_to_hex(uhex);
+				}
+
+			}else
+				decimal_to_hex(uhex);
+		}
 }
 
+void decimal_to_hex(alt_u8 uhex)
+{
+	IOWR_ALTERA_AVALON_PIO_DATA(hex0, hextable[(uhex)%10]);
+	uhex /= 10;
+
+	IOWR_ALTERA_AVALON_PIO_DATA(hex1, hextable[(uhex)%10]);
+	uhex /= 10;
+
+	IOWR_ALTERA_AVALON_PIO_DATA(hex2, hextable[uhex%10]);
 
 
+	IOWR_ALTERA_AVALON_PIO_DATA(hex3,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex4,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex5,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex6,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex7,HEXVAL_CLEAR);
+}
 
