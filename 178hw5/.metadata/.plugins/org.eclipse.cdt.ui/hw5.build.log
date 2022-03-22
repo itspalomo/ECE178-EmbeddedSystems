@@ -1,0 +1,9 @@
+01:32:46 **** Incremental Build of configuration Nios II for project hw5 ****
+make all 
+Info: Building ../hw5_bsp/
+C:/intelFPGA_lite/17.1/nios2eds/bin/gnu/H-x86_64-mingw32/bin/make --no-print-directory -C ../hw5_bsp/
+[BSP build complete]
+[hw5 build complete]
+
+01:32:47 Build Finished (took 992ms)
+

@@ -4,26 +4,27 @@
 
 `timescale 1 ps / 1 ps
 module hw3proc (
-		input  wire        clk_clk,         //      clk.clk
-		output wire [6:0]  hex0_export,     //     hex0.export
-		output wire [6:0]  hex1_export,     //     hex1.export
-		output wire [6:0]  hex2_export,     //     hex2.export
-		output wire [6:0]  hex3_export,     //     hex3.export
-		output wire [6:0]  hex4_export,     //     hex4.export
-		output wire [6:0]  hex5_export,     //     hex5.export
-		output wire [6:0]  hex6_export,     //     hex6.export
-		output wire [6:0]  hex7_export,     //     hex7.export
-		output wire [7:0]  ledg_export,     //     ledg.export
-		output wire [17:0] ledr_export,     //     ledr.export
-		input  wire        reset_reset_n,   //    reset.reset_n
-		inout  wire [15:0] sram_DQ,         //     sram.DQ
-		output wire [19:0] sram_ADDR,       //         .ADDR
-		output wire        sram_LB_N,       //         .LB_N
-		output wire        sram_UB_N,       //         .UB_N
-		output wire        sram_CE_N,       //         .CE_N
-		output wire        sram_OE_N,       //         .OE_N
-		output wire        sram_WE_N,       //         .WE_N
-		input  wire [17:0] switches_export  // switches.export
+		input  wire        clk_clk,            //         clk.clk
+		output wire [6:0]  hex0_export,        //        hex0.export
+		output wire [6:0]  hex1_export,        //        hex1.export
+		output wire [6:0]  hex2_export,        //        hex2.export
+		output wire [6:0]  hex3_export,        //        hex3.export
+		output wire [6:0]  hex4_export,        //        hex4.export
+		output wire [6:0]  hex5_export,        //        hex5.export
+		output wire [6:0]  hex6_export,        //        hex6.export
+		output wire [6:0]  hex7_export,        //        hex7.export
+		output wire [7:0]  ledg_export,        //        ledg.export
+		output wire [17:0] ledr_export,        //        ledr.export
+		input  wire [3:0]  pushbuttons_export, // pushbuttons.export
+		input  wire        reset_reset_n,      //       reset.reset_n
+		inout  wire [15:0] sram_DQ,            //        sram.DQ
+		output wire [19:0] sram_ADDR,          //            .ADDR
+		output wire        sram_LB_N,          //            .LB_N
+		output wire        sram_UB_N,          //            .UB_N
+		output wire        sram_CE_N,          //            .CE_N
+		output wire        sram_OE_N,          //            .OE_N
+		output wire        sram_WE_N,          //            .WE_N
+		input  wire [17:0] switches_export     //    switches.export
 	);
 
 	wire  [31:0] hw3proc_data_master_readdata;                                // mm_interconnect_0:hw3proc_data_master_readdata -> hw3proc:d_readdata
@@ -133,11 +134,13 @@ module hw3proc (
 	wire   [2:0] mm_interconnect_0_hr_timer_s1_address;                       // mm_interconnect_0:hr_timer_s1_address -> hr_timer:address
 	wire         mm_interconnect_0_hr_timer_s1_write;                         // mm_interconnect_0:hr_timer_s1_write -> hr_timer:write_n
 	wire  [15:0] mm_interconnect_0_hr_timer_s1_writedata;                     // mm_interconnect_0:hr_timer_s1_writedata -> hr_timer:writedata
+	wire  [31:0] mm_interconnect_0_pushbuttons_s1_readdata;                   // pushbuttons:readdata -> mm_interconnect_0:pushbuttons_s1_readdata
+	wire   [1:0] mm_interconnect_0_pushbuttons_s1_address;                    // mm_interconnect_0:pushbuttons_s1_address -> pushbuttons:address
 	wire         irq_mapper_receiver0_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                    // hr_timer:irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                    // system_timer:irq -> irq_mapper:receiver2_irq
 	wire  [31:0] hw3proc_d_irq_irq;                                           // irq_mapper:sender_irq -> hw3proc:d_irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [hex_0:reset_n, hex_1:reset_n, hex_2:reset_n, hex_3:reset_n, hex_4:reset_n, hex_5:reset_n, hex_6:reset_n, hex_7:reset_n, hr_timer:reset_n, hw3proc:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, ledg:reset_n, ledr:reset_n, mm_interconnect_0:hw3proc_reset_n_reset_bridge_in_reset_reset, onchip_memory2_0:reset, rst_translator:in_reset, sram_0:reset, switches:reset_n, sysid_qsys_0:reset_n, system_timer:reset_n]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [hex_0:reset_n, hex_1:reset_n, hex_2:reset_n, hex_3:reset_n, hex_4:reset_n, hex_5:reset_n, hex_6:reset_n, hex_7:reset_n, hr_timer:reset_n, hw3proc:reset_n, irq_mapper:reset, jtag_uart_0:rst_n, ledg:reset_n, ledr:reset_n, mm_interconnect_0:hw3proc_reset_n_reset_bridge_in_reset_reset, onchip_memory2_0:reset, pushbuttons:reset_n, rst_translator:in_reset, sram_0:reset, switches:reset_n, sysid_qsys_0:reset_n, system_timer:reset_n]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [hw3proc:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         hw3proc_jtag_debug_module_reset_reset;                       // hw3proc:jtag_debug_module_resetrequest -> rst_controller:reset_in1
 
@@ -320,6 +323,14 @@ module hw3proc (
 		.freeze     (1'b0)                                              // (terminated)
 	);
 
+	hw3proc_pushbuttons pushbuttons (
+		.clk      (clk_clk),                                   //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),           //               reset.reset_n
+		.address  (mm_interconnect_0_pushbuttons_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_pushbuttons_s1_readdata), //                    .readdata
+		.in_port  (pushbuttons_export)                         // external_connection.export
+	);
+
 	hw3proc_sram_0 sram_0 (
 		.clk           (clk_clk),                                                  //                clk.clk
 		.reset         (rst_controller_reset_out_reset),                           //              reset.reset
@@ -459,6 +470,8 @@ module hw3proc (
 		.onchip_memory2_0_s1_byteenable              (mm_interconnect_0_onchip_memory2_0_s1_byteenable),            //                                      .byteenable
 		.onchip_memory2_0_s1_chipselect              (mm_interconnect_0_onchip_memory2_0_s1_chipselect),            //                                      .chipselect
 		.onchip_memory2_0_s1_clken                   (mm_interconnect_0_onchip_memory2_0_s1_clken),                 //                                      .clken
+		.pushbuttons_s1_address                      (mm_interconnect_0_pushbuttons_s1_address),                    //                        pushbuttons_s1.address
+		.pushbuttons_s1_readdata                     (mm_interconnect_0_pushbuttons_s1_readdata),                   //                                      .readdata
 		.sram_0_avalon_sram_slave_address            (mm_interconnect_0_sram_0_avalon_sram_slave_address),          //              sram_0_avalon_sram_slave.address
 		.sram_0_avalon_sram_slave_write              (mm_interconnect_0_sram_0_avalon_sram_slave_write),            //                                      .write
 		.sram_0_avalon_sram_slave_read               (mm_interconnect_0_sram_0_avalon_sram_slave_read),             //                                      .read
