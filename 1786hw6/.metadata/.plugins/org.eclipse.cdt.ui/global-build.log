@@ -1,0 +1,6 @@
+01:45:10 **** Clean-only build of configuration Nios II for project hw6_bsp ****
+make clean 
+[BSP clean complete]
+01:45:12 **** Clean-only build of configuration Nios II for project hw6 ****
+make clean 
+[hw6 clean complete]
