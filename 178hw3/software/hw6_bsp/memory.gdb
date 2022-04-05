@@ -1,9 +1,9 @@
 # memory.gdb - GDB memory region definitions
 #
 # Machine generated for CPU 'hw3proc' in SOPC Builder design 'hw3proc'
-# SOPC Builder design path: ../../hw3proc.sopcinfo
+# SOPC Builder design path: D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc.sopcinfo
 #
-# Generated: Tue Mar 22 01:45:10 PDT 2022
+# Generated: Tue Apr 05 09:00:18 PDT 2022
 
 # DO NOT MODIFY THIS FILE
 #

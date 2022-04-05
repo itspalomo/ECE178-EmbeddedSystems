@@ -1,12 +1,12 @@
-Fitter Status : Successful - Tue Mar 15 10:54:59 2022
-Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Fitter Status : Successful - Tue Apr 05 09:21:02 2022
+Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
 Revision Name : hw3
 Top-level Entity Name : hw3
 Family : Cyclone IV E
 Device : EP4CE115F29C7
 Timing Models : Final
-Total logic elements : 4,510 / 114,480 ( 4 % )
-    Total combinational functions : 4,018 / 114,480 ( 4 % )
+Total logic elements : 4,532 / 114,480 ( 4 % )
+    Total combinational functions : 4,025 / 114,480 ( 4 % )
     Dedicated logic registers : 2,719 / 114,480 ( 2 % )
 Total registers : 2858
 Total pins : 146 / 529 ( 28 % )

@@ -101,7 +101,7 @@ ACDS_VERSION := 17.1
 # BUILD_NUMBER: 593
 
 SETTINGS_FILE := settings.bsp
-SOPC_FILE := ../../hw3proc.sopcinfo
+SOPC_FILE := D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc.sopcinfo
 
 #-------------------------------------------------------------------------------
 #                             TOOL & COMMAND DEFINITIONS

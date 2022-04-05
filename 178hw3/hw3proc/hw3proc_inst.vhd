@@ -11,6 +11,7 @@
 			hex7_export        : out   std_logic_vector(6 downto 0);                     -- export
 			ledg_export        : out   std_logic_vector(7 downto 0);                     -- export
 			ledr_export        : out   std_logic_vector(17 downto 0);                    -- export
+			pushbuttons_export : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
 			reset_reset_n      : in    std_logic                     := 'X';             -- reset_n
 			sram_DQ            : inout std_logic_vector(15 downto 0) := (others => 'X'); -- DQ
 			sram_ADDR          : out   std_logic_vector(19 downto 0);                    -- ADDR
@@ -19,8 +20,7 @@
 			sram_CE_N          : out   std_logic;                                        -- CE_N
 			sram_OE_N          : out   std_logic;                                        -- OE_N
 			sram_WE_N          : out   std_logic;                                        -- WE_N
-			switches_export    : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
-			pushbuttons_export : in    std_logic_vector(3 downto 0)  := (others => 'X')  -- export
+			switches_export    : in    std_logic_vector(17 downto 0) := (others => 'X')  -- export
 		);
 	end component hw3proc;
 
@@ -37,6 +37,7 @@
 			hex7_export        => CONNECTED_TO_hex7_export,        --        hex7.export
 			ledg_export        => CONNECTED_TO_ledg_export,        --        ledg.export
 			ledr_export        => CONNECTED_TO_ledr_export,        --        ledr.export
+			pushbuttons_export => CONNECTED_TO_pushbuttons_export, -- pushbuttons.export
 			reset_reset_n      => CONNECTED_TO_reset_reset_n,      --       reset.reset_n
 			sram_DQ            => CONNECTED_TO_sram_DQ,            --        sram.DQ
 			sram_ADDR          => CONNECTED_TO_sram_ADDR,          --            .ADDR
@@ -45,7 +46,6 @@
 			sram_CE_N          => CONNECTED_TO_sram_CE_N,          --            .CE_N
 			sram_OE_N          => CONNECTED_TO_sram_OE_N,          --            .OE_N
 			sram_WE_N          => CONNECTED_TO_sram_WE_N,          --            .WE_N
-			switches_export    => CONNECTED_TO_switches_export,    --    switches.export
-			pushbuttons_export => CONNECTED_TO_pushbuttons_export  -- pushbuttons.export
+			switches_export    => CONNECTED_TO_switches_export     --    switches.export
 		);
 

@@ -86,7 +86,7 @@ ACDS_VERSION := 17.1
 
 # Qsys--generated SOPCINFO file. Required for resolving node instance ID's with 
 # design component names. 
-SOPCINFO_FILE := $(ABS_BSP_ROOT_DIR)/../../hw3proc.sopcinfo
+SOPCINFO_FILE := D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc.sopcinfo
 
 # Big-Endian operation. 
 # setting BIG_ENDIAN is false
@@ -152,14 +152,14 @@ SOPC_SYSID_FLAG += --id=0
 ELF_PATCH_FLAG  += --id 0
 
 # The SOPC System ID Base Address 
-# setting SOPC_SYSID_BASE_ADDRESS is 0x2100
-SOPC_SYSID_FLAG += --sidp=0x2100
-ELF_PATCH_FLAG  += --sidp 0x2100
+# setting SOPC_SYSID_BASE_ADDRESS is 0x401100
+SOPC_SYSID_FLAG += --sidp=0x401100
+ELF_PATCH_FLAG  += --sidp 0x401100
 
 # The SOPC Timestamp 
-# setting SOPC_TIMESTAMP is 1647366680
-SOPC_SYSID_FLAG += --timestamp=1647366680
-ELF_PATCH_FLAG  += --timestamp 1647366680
+# setting SOPC_TIMESTAMP is 1649175549
+SOPC_SYSID_FLAG += --timestamp=1649175549
+ELF_PATCH_FLAG  += --timestamp 1649175549
 
 # Enable JTAG UART driver to recover when host is inactive causing buffer to 
 # full without returning error. Printf will not fail with this recovery. none 

@@ -90,12 +90,9 @@
 #include <unistd.h>
 #include <time.h>
 #include "altera_avalon_timer_regs.h"
+#include "sys/alt_irq.h"
 
-volatile int edge_capturel;
-
-volatile int ledg = 0x000020d0;
-volatile int switch_base = 0x000020f0;
-volatile int BUTTON_PIO_BASE = 0x00002040;
+volatile int edge_capture;
 
 volatile int hex0 = 0x000020c0;
 volatile int hex1 = 0x000020b0;
@@ -131,38 +128,118 @@ void clearhex();
 
 
 static void init_button_pio();
+static void button_isr(void* context, alt_u32 id);
+static void handle_button_interrupt();
+static void initial_message()
+{
+    alt_printf("* Hello from Nios II!    *\n");
+}
+
+
 
 int main()
 { 
-  alt_putstr("Hello from Nios II!\n");
-
-  /* Event loop never exits. */
-  while (1);
-
-  return 0;
+	initial_message();
+	init_button_pio();
+    while (1)
+    {
+    	usleep(10000);
+    }
+    return 0;
 }
 
 static void init_button_pio()
 {
-	/* Recast the edge_capture pointer to match the
-	alt_irq_register() function prototype. */
-	void* edge_capture_ptr = (void*) &edge_capture;
-
-	/* Enable all 4 button interrupts. */
-	IOWR_ALTERA_AVALON_PIO_IRQ_MASK(BUTTON_PIO_BASE, 0xf);
-
-	/* Reset the edge capture register. */
-	IOWR_ALTERA_AVALON_PIO_EDGE_CAP(BUTTON_PIO_BASE, 0x0);
-
-	/* Register the ISR. */
-	#ifdef ALT_ENHANCED_INTERRUPT_API_PRESENT
-		alt_ic_isr_register(BUTTON_PIO_IRQ_INTERRUPT_CONTROLLER_ID,
-							BUTTON_PIO_IRQ,
-							handle_button_interrupts,
-							edge_capture_ptr, 0x0);
-	#else
-		alt_irq_register( BUTTON_PIO_IRQ,
-						edge_capture_ptr,
-						handle_button_interrupts );
-	#endif
+	/* Recast the edge_capture pointer to match the alt_irq_register() function
+	     * prototype. */
+	    void* edge_capture_ptr = (void*) &edge_capture;
+	    /* Enable all 4 button interrupts. */
+	    IOWR_ALTERA_AVALON_PIO_IRQ_MASK(PUSHBUTTONS_BASE, 0xf);
+	    /* Reset the edge capture register. */
+	    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PUSHBUTTONS_BASE, 0x0);
+	    /* Register the interrupt handler. */
+	    alt_irq_register( PUSHBUTTONS_IRQ, edge_capture_ptr, button_isr );
 }
+
+
+
+static void button_isr(void* context, alt_u32 id)
+{
+	/* Cast context to edge_capture's type. It is important that this be
+	     * declared volatile to avoid unwanted compiler optimization.
+	     */
+	    volatile int* edge_capture_ptr = (volatile int*) context;
+	    /* Store the value in the Button's edge capture register in *context. */
+	    *edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PUSHBUTTONS_BASE);
+
+	    alt_printf("Interrupt occurred");
+	    handle_button_interrupt();
+
+	    /* Reset the Button's edge capture register. */
+	    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PUSHBUTTONS_BASE, 0);
+	    IORD_ALTERA_AVALON_PIO_EDGE_CAP(PUSHBUTTONS_BASE);
+}
+
+static void handle_button_interrupt()
+{
+	 alt_u8 sw = IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE);
+	 alt_u8 button = IORD_ALTERA_AVALON_PIO_DATA(PUSHBUTTONS_BASE);
+
+    sw = sw & 0b00001000; //mask
+
+    if (button == 0b0010)
+    {
+    	IOWR_ALTERA_AVALON_PIO_DATA(0b0001,LEDG_BASE);
+
+    }
+    else if (button == 0b0100 && sw == 0b00001000)
+    {
+    	alt_u8 temp = IORD_ALTERA_AVALON_PIO_EDGE_CAP(LEDG_BASE);
+    	if (temp%2 == 0)
+    	{
+    		temp++;
+    		temp %= 10;
+    		IOWR_ALTERA_AVALON_PIO_DATA(temp,LEDG_BASE);
+    	}
+    	else
+    	{
+    		temp += 2;
+    		temp %= 10;
+    		IOWR_ALTERA_AVALON_PIO_DATA(temp,LEDG_BASE);
+    	}
+    }
+    else if (button == 0b0100 && sw == 0b00000000)
+    {
+    	alt_u8 temp = IORD_ALTERA_AVALON_PIO_EDGE_CAP(LEDG_BASE);
+		if (temp%2 == 0 && temp > 1)
+		{
+			temp--;
+			temp %= 10;
+			IOWR_ALTERA_AVALON_PIO_DATA(temp,LEDG_BASE);
+		}
+		else if(temp%2 != 0 && temp > 2)
+		{
+			temp -= 2;
+			temp %= 10;
+			IOWR_ALTERA_AVALON_PIO_DATA(temp,LEDG_BASE);
+		} else
+		{
+			IOWR_ALTERA_AVALON_PIO_DATA(0b0001,LEDG_BASE);
+		}
+    }
+
+}
+
+
+void clearhex()
+{
+	IOWR_ALTERA_AVALON_PIO_DATA(hex0,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex1,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex2,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex3,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex4,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex5,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex6,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(hex7,HEXVAL_CLEAR);
+}
+

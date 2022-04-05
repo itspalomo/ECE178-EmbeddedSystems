@@ -11,6 +11,7 @@ module hw3proc (
 	hex7_export,
 	ledg_export,
 	ledr_export,
+	pushbuttons_export,
 	reset_reset_n,
 	sram_DQ,
 	sram_ADDR,
@@ -19,8 +20,7 @@ module hw3proc (
 	sram_CE_N,
 	sram_OE_N,
 	sram_WE_N,
-	switches_export,
-	pushbuttons_export);	
+	switches_export);	
 
 	input		clk_clk;
 	output	[6:0]	hex0_export;
@@ -33,6 +33,7 @@ module hw3proc (
 	output	[6:0]	hex7_export;
 	output	[7:0]	ledg_export;
 	output	[17:0]	ledr_export;
+	input	[3:0]	pushbuttons_export;
 	input		reset_reset_n;
 	inout	[15:0]	sram_DQ;
 	output	[19:0]	sram_ADDR;
@@ -42,5 +43,4 @@ module hw3proc (
 	output		sram_OE_N;
 	output		sram_WE_N;
 	input	[17:0]	switches_export;
-	input	[3:0]	pushbuttons_export;
 endmodule

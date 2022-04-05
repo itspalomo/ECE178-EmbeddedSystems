@@ -10,6 +10,7 @@
 		.hex7_export        (<connected-to-hex7_export>),        //        hex7.export
 		.ledg_export        (<connected-to-ledg_export>),        //        ledg.export
 		.ledr_export        (<connected-to-ledr_export>),        //        ledr.export
+		.pushbuttons_export (<connected-to-pushbuttons_export>), // pushbuttons.export
 		.reset_reset_n      (<connected-to-reset_reset_n>),      //       reset.reset_n
 		.sram_DQ            (<connected-to-sram_DQ>),            //        sram.DQ
 		.sram_ADDR          (<connected-to-sram_ADDR>),          //            .ADDR
@@ -18,7 +19,6 @@
 		.sram_CE_N          (<connected-to-sram_CE_N>),          //            .CE_N
 		.sram_OE_N          (<connected-to-sram_OE_N>),          //            .OE_N
 		.sram_WE_N          (<connected-to-sram_WE_N>),          //            .WE_N
-		.switches_export    (<connected-to-switches_export>),    //    switches.export
-		.pushbuttons_export (<connected-to-pushbuttons_export>)  // pushbuttons.export
+		.switches_export    (<connected-to-switches_export>)     //    switches.export
 	);
 

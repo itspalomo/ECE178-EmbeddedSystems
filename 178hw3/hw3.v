@@ -40,7 +40,7 @@ module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 		.sram_OE_N       (SRAM_OE_N),       //         .OE_N
 		.sram_WE_N       (SRAM_WE_N),       //         .WE_N
 		.switches_export (SW),  // switches.export
-		.pushbuttons_export(KEY) // pushbuttons
+		.pushbuttons_export (KEY) // pushbuttons exports
 	);
 
 endmodule 

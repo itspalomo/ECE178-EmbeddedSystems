@@ -2,9 +2,9 @@
  * linker.h - Linker script mapping information
  *
  * Machine generated for CPU 'hw3proc' in SOPC Builder design 'hw3proc'
- * SOPC Builder design path: ../../hw3proc.sopcinfo
+ * SOPC Builder design path: D:/Spring_2022/ECE178-EmbeddedSystems/178hw3/hw3proc.sopcinfo
  *
- * Generated: Tue Mar 22 01:45:10 PDT 2022
+ * Generated: Tue Apr 05 09:05:55 PDT 2022
  */
 
 /*
@@ -65,8 +65,12 @@
  *
  */
 
+#define EXCEPTION_STACK_REGION_BASE 0xc00
+#define EXCEPTION_STACK_REGION_SPAN 1024
+#define INTERRUPT_STACK_REGION_BASE 0x800
+#define INTERRUPT_STACK_REGION_SPAN 1024
 #define ONCHIP_MEMORY2_0_REGION_BASE 0x20
-#define ONCHIP_MEMORY2_0_REGION_SPAN 4064
+#define ONCHIP_MEMORY2_0_REGION_SPAN 2016
 #define RESET_REGION_BASE 0x0
 #define RESET_REGION_SPAN 32
 
@@ -97,5 +101,21 @@
  */
 
 #define ALT_LOAD_COPY_RWDATA
+
+
+/*
+ * Use a separate exception stack
+ *
+ */
+
+#define ALT_EXCEPTION_STACK
+
+
+/*
+ * Use a separate interrupt stack
+ *
+ */
+
+#define ALT_INTERRUPT_STACK
 
 #endif /* __LINKER_H_ */
