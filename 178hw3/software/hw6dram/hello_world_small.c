@@ -79,23 +79,12 @@
  */
 #include <stdio.h>
 #include "system.h"
-#include "io.h"
 #include "sys/alt_stdio.h"
 #include "altera_avalon_pio_regs.h"
 #include "alt_types.h"
 #include "sys/alt_irq.h"
 
 volatile int edge_capture;
-
-volatile int hex0 = 0x000020c0;
-volatile int hex1 = 0x000020b0;
-volatile int hex2 = 0x000020a0;
-volatile int hex3 = 0x00002090;
-volatile int hex4 = 0x00002080;
-volatile int hex5 = 0x00002070;
-volatile int hex6 = 0x00002060;
-volatile int hex7 = 0x00002050;
-
 
 #define HEXVAL_0 0b11000000 /*0*/
 #define HEXVAL_1 0b11111001 /*1*/
@@ -107,10 +96,6 @@ volatile int hex7 = 0x00002050;
 #define HEXVAL_7 0b11111000 /*7*/
 #define HEXVAL_8 0b10000000 /*8*/
 #define HEXVAL_9 0b10011000 /*9*/
-#define HEXVAL_9 0b10011000 /*A*/
-#define HEXVAL_9 0b10011000 /*b*/
-#define HEXVAL_9 0b10011000 /*c*/
-#define HEXVAL_9 0b10011000 /*d*/
 #define HEXVAL_NEG 0b0111111 /*d*/
 #define HEXVAL_CLEAR 0b11111111 /*Clear*/
 
@@ -119,10 +104,13 @@ int hextable[] = {HEXVAL_0, HEXVAL_1, HEXVAL_2, HEXVAL_3, HEXVAL_4,
 
 void clearhex();
 
-
+void decimal_to_hex(alt_u8 uhex);
+alt_u8 concatenate(alt_u8 x, alt_u8 y);
+alt_u8 get_hex();
 static void init_button_pio();
+alt_u8 hextableplace(alt_u8 place);
 static void button_isr(void* context, alt_u32 id);
-static void handle_button_interrupt(int capped);
+static void button_isr2(void* context, alt_u32 id);
 static void initial_message()
 {
     alt_printf("* Hello from Nios II!    *\n");
@@ -134,6 +122,7 @@ int main()
 { 
 	initial_message();
 	init_button_pio();
+	clearhex();
     while (1)
     {
     }
@@ -151,7 +140,7 @@ static void init_button_pio()
 	    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PUSH_BUTTONS_BASE, 0x00);
 	    /* Register the interrupt handler. */
 	    alt_ic_isr_register(PUSH_BUTTONS_IRQ_INTERRUPT_CONTROLLER_ID, PUSH_BUTTONS_IRQ,
-	               button_isr, edge_capture_ptr, 0x00);
+	               button_isr2, edge_capture_ptr, 0x00);
 }
 
 
@@ -168,32 +157,198 @@ static void button_isr(void* context, alt_u32 id)
 	    alt_printf("Interrupt occurred\n");
 	    alt_printf("ISR Reached!\n");
 
-		 if (*edge_capture_ptr & 0b0010)
+		 if (*edge_capture_ptr & 0b0010)// key2
+		 {
 			 IOWR_ALTERA_AVALON_PIO_DATA(LEDG_BASE,0b0001);
+			 decimal_to_hex((alt_u8)IORD_ALTERA_AVALON_PIO_DATA(LEDG_BASE));
+		 }
 		 else if(*edge_capture_ptr & 0b0100) //key 3
 		 {
+			 int temp = (int)IORD_ALTERA_AVALON_PIO_DATA(LEDG_BASE);
+			 if((IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0b000000000000000001))
+			 {
+				 ++temp;
+				 while (temp%2 == 0)
+				 {
+					temp = (temp > 127 ? 1 : ++temp);
+					if (temp == 1)
+						break;
+				 }
 
-			 IOWR_ALTERA_AVALON_PIO_DATA(LEDG_BASE,0b1001);
+				 IOWR_ALTERA_AVALON_PIO_DATA(LEDG_BASE,temp);
+				 decimal_to_hex((alt_u8)temp);
+			 }
+			 else if (!(IORD_ALTERA_AVALON_PIO_DATA(SWITCHES_BASE) & 0b000000000000000000))
+			 {
+				temp = (temp <= 1 ? 1 : --temp);
+				 while (temp%2 == 0)
+				 {
+					temp = (temp <= 1 ? 1 : --temp);
+					if (temp == 1)
+						break;
+				 }
+
+				 IOWR_ALTERA_AVALON_PIO_DATA(LEDG_BASE,temp);
+				 decimal_to_hex((alt_u8)temp);
+			 }
 		 }
 
 
-		clearhex();
+	    /* Reset the Button's edge capture register. */
+	    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PUSH_BUTTONS_BASE, 0);
+	    IORD_ALTERA_AVALON_PIO_EDGE_CAP(PUSH_BUTTONS_BASE);
+}
+
+static void button_isr2(void* context, alt_u32 id)
+{
+	/* Cast context to edge_capture's type. It is important that this be
+	     * declared volatile to avoid unwanted compiler optimization.
+	     */
+	    volatile int* edge_capture_ptr = (volatile int*) context;
+	    /* Store the value in the Button's edge capture register in *context. */
+	    *edge_capture_ptr = IORD_ALTERA_AVALON_PIO_EDGE_CAP(PUSH_BUTTONS_BASE);
+
+
+	    alt_printf("Interrupt occurred\n");
+	    alt_printf("ISR Reached!\n");
+
+
+
+		 if (*edge_capture_ptr & 0b0001)// key1
+		 {
+			 IOWR_ALTERA_AVALON_PIO_DATA(LEDG_BASE,0b0000);
+			 decimal_to_hex((alt_u8)0b01);
+		 }
+		 else if(*edge_capture_ptr & 0b0010) //key 2
+		 {
+
+				 alt_u8 temp = get_hex();
+				 alt_printf("\nIncrement %x", temp);
+
+				 if (temp >= 99)
+					 temp = 1;
+				 else
+					 temp++;
+
+				 alt_printf("\nIncremented %x", temp);
+				 decimal_to_hex(temp);
+
+		 }
+		 else if(*edge_capture_ptr & 0b0100) //key 3
+		 {
+
+				 alt_u8 temp = get_hex();
+				 alt_printf("\nDecrement %x", temp);
+
+				 if (temp <= 1)
+					 temp = 1;
+				 else
+					 temp--;
+				 alt_printf("\nIncremented %x", temp);
+				 decimal_to_hex((alt_u8)temp);
+
+		 }
+
+
 	    /* Reset the Button's edge capture register. */
 	    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PUSH_BUTTONS_BASE, 0);
 	    IORD_ALTERA_AVALON_PIO_EDGE_CAP(PUSH_BUTTONS_BASE);
 }
 
 
-
-
 void clearhex()
 {
-	IOWR_ALTERA_AVALON_PIO_DATA(hex0,HEXVAL_CLEAR);
-	IOWR_ALTERA_AVALON_PIO_DATA(hex1,HEXVAL_CLEAR);
-	IOWR_ALTERA_AVALON_PIO_DATA(hex2,HEXVAL_CLEAR);
-	IOWR_ALTERA_AVALON_PIO_DATA(hex3,HEXVAL_CLEAR);
-	IOWR_ALTERA_AVALON_PIO_DATA(hex4,HEXVAL_CLEAR);
-	IOWR_ALTERA_AVALON_PIO_DATA(hex5,HEXVAL_CLEAR);
-	IOWR_ALTERA_AVALON_PIO_DATA(hex6,HEXVAL_CLEAR);
-	IOWR_ALTERA_AVALON_PIO_DATA(hex7,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_0_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_1_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_2_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_3_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_4_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_5_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_6_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_7_BASE,HEXVAL_CLEAR);
+}
+
+void decimal_to_hex(alt_u8 uhex)
+{
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_0_BASE, hextable[(uhex)%10]);
+	uhex /= 10;
+
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_1_BASE, hextable[(uhex)%10]);
+	uhex /= 10;
+
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_2_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_3_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_4_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_5_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_6_BASE,HEXVAL_CLEAR);
+	IOWR_ALTERA_AVALON_PIO_DATA(HEX_7_BASE,HEXVAL_CLEAR);
+}
+
+alt_u8 get_hex()
+{
+
+	alt_u8 x = ((alt_u8)IORD_ALTERA_AVALON_PIO_DATA(HEX_1_BASE)&0b01111111);
+	x+= 0b10000000;
+	x = hextableplace(x);
+	alt_printf("\nX val = %x", x);
+	alt_u8 y = ((alt_u8)IORD_ALTERA_AVALON_PIO_DATA(HEX_0_BASE)&0b01111111);
+	y+= 0b10000000;
+	y = hextableplace(y);
+
+
+	alt_printf("\nY val = %x", y);
+
+	if(x == 0xff || y == 0xff){
+		return 0b01;
+	}
+
+	alt_printf("\nConcatenation = %x\n", concatenate(x,y));
+
+	return concatenate(x,y);
+
+}
+
+alt_u8 hextableplace(alt_u8 place)
+{
+	switch(place){
+		case HEXVAL_0:
+			place = 0;
+				break;
+		case HEXVAL_1:
+			place = 1;
+				break;
+		case HEXVAL_2:
+			place = 2;
+				break;
+		case HEXVAL_3:
+			place = 3;
+				break;
+		case HEXVAL_4:
+			place = 4;
+				break;
+		case HEXVAL_5:
+			place = 5;
+				break;
+		case HEXVAL_6:
+			place = 6;
+				break;
+		case HEXVAL_7:
+			place = 7;
+				break;
+		case HEXVAL_8:
+			place = 8;
+				break;
+		case HEXVAL_9:
+			place = 9;
+				break;
+	}
+	return place;
+}
+
+
+alt_u8 concatenate(alt_u8 x, alt_u8 y) {
+	alt_u8 pow = 10;
+    while(y >= pow)
+        pow *= 10;
+    return x * pow + y;
 }
