@@ -1,25 +1,25 @@
 //hw3 instantiation
 
 module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
-				HEX4, HEX5, HEX6, HEX7, LEDG, LEDR, SRAM_DQ,
-				SRAM_ADDR, SRAM_LB_N, SRAM_UB_N, SRAM_CE_N,
-				SRAM_OE_N, SRAM_WE_N);
+				HEX4, HEX5, HEX6, HEX7, LEDG, LEDR, DRAM_CLK, DRAM_CKE,
+				DRAM_ADDR, DRAM_BA, DRAM_CS_N, DRAM_CAS_N, DRAM_RAS_N,
+				DRAM_WE_N, DRAM_DQ, DRAM_DQM);
 				
 		input  wire        CLOCK_50;         //      clk.clk
 		output wire [6:0]  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;
 		output wire [7:0]  LEDG;     //     ledg.export
 		output wire [17:0] LEDR;     //     ledr.export
 		input  wire [3:0]  KEY;   //    reset.reset_n
-		inout  wire [15:0] SRAM_DQ;         //     sram.DQ
-		output wire [19:0] SRAM_ADDR;       //         .ADDR
-		output wire        SRAM_LB_N;       //         .LB_N
-		output wire        SRAM_UB_N;       //         .UB_N
-		output wire        SRAM_CE_N;       //         .CE_N
-		output wire        SRAM_OE_N;       //         .OE_N
-		output wire        SRAM_WE_N;       //         .WE_N
 		input  wire [17:0] SW;  // switches.export
+		output [12:0] DRAM_ADDR;
+		output [1:0] DRAM_BA;
+		output DRAM_CAS_N, DRAM_RAS_N, DRAM_CLK;
+		output DRAM_CKE, DRAM_CS_N, DRAM_WE_N;
+		output [3:0] DRAM_DQM;
+		inout [31:0] DRAM_DQ;
+
 		
-		hw3proc u0 (
+		niosdramproc u0 (
 		.clk_clk         (CLOCK_50),         //      clk.clk
 		.hex0_export     (HEX0),     //     hex0.export
 		.hex1_export     (HEX1),     //     hex1.export
@@ -31,16 +31,19 @@ module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 		.hex7_export     (HEX7),     //     hex7.export
 		.ledg_export     (LEDG),     //     ledg.export
 		.ledr_export     (LEDR),     //     ledr.export
-		.reset_reset_n   (KEY[0]),   //    reset.reset_n
-		.sram_DQ         (SRAM_DQ),         //     sram.DQ
-		.sram_ADDR       (SRAM_ADDR),       //         .ADDR
-		.sram_LB_N       (SRAM_LB_N),       //         .LB_N
-		.sram_UB_N       (SRAM_UB_N),       //         .UB_N
-		.sram_CE_N       (SRAM_CE_N),       //         .CE_N
-		.sram_OE_N       (SRAM_OE_N),       //         .OE_N
-		.sram_WE_N       (SRAM_WE_N),       //         .WE_N
+		.reset_reset   (SW[17]),   //    reset.reset_n
 		.switches_export (SW),  // switches.export
-		.pushbuttons_export (KEY) // pushbuttons exports
+		.pushbutton_export (KEY), // pushbuttons exports
+		.sdram_wire_addr   (DRAM_ADDR),   // sdram_wire.addr
+		.sdram_wire_ba     (DRAM_BA),     //           .ba
+		.sdram_wire_cas_n  (DRAM_CAS_N),  //           .cas_n
+		.sdram_wire_cke    (DRAM_CKE),    //           .cke
+		.sdram_wire_cs_n   (DRAM_CS_N),   //           .cs_n
+		.sdram_wire_dq     (DRAM_DQ),     //           .dq
+		.sdram_wire_dqm    (DRAM_DQM),    //           .dqm
+		.sdram_wire_ras_n  (DRAM_RAS_N),  //           .ras_n
+		.sdram_wire_we_n   (DRAM_WE_N),   //           .we_n
+		.sdram_clk_clk (DRAM_CLK)
 	);
 
 endmodule 
