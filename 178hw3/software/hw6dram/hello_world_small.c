@@ -140,7 +140,7 @@ static void init_button_pio()
 	    IOWR_ALTERA_AVALON_PIO_EDGE_CAP(PUSH_BUTTONS_BASE, 0x00);
 	    /* Register the interrupt handler. */
 	    alt_ic_isr_register(PUSH_BUTTONS_IRQ_INTERRUPT_CONTROLLER_ID, PUSH_BUTTONS_IRQ,
-	               button_isr, edge_capture_ptr, 0x00);
+	               button_isr2, edge_capture_ptr, 0x00);
 }
 
 
