@@ -1,6 +1,6 @@
 Flow report for hw3
-Fri May 06 19:02:44 2022
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Sun May 08 14:19:37 2022
+Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
 
 
 ---------------------
@@ -37,26 +37,26 @@ refer to the applicable agreement for further details.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Fri May 06 19:02:35 2022       ;
-; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Revision Name                      ; hw3                                         ;
-; Top-level Entity Name              ; hw3                                         ;
-; Family                             ; Cyclone IV E                                ;
-; Device                             ; EP4CE115F29C7                               ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 5,044 / 114,480 ( 4 % )                     ;
-;     Total combinational functions  ; 4,488 / 114,480 ( 4 % )                     ;
-;     Dedicated logic registers      ; 3,040 / 114,480 ( 3 % )                     ;
-; Total registers                    ; 3254                                        ;
-; Total pins                         ; 204 / 529 ( 39 % )                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 100,288 / 3,981,312 ( 3 % )                 ;
-; Embedded Multiplier 9-bit elements ; 4 / 532 ( < 1 % )                           ;
-; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
-+------------------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------------------+
+; Flow Summary                                                                              ;
++------------------------------------+------------------------------------------------------+
+; Flow Status                        ; Successful - Sun May 08 14:19:32 2022                ;
+; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition ;
+; Revision Name                      ; hw3                                                  ;
+; Top-level Entity Name              ; hw3                                                  ;
+; Family                             ; Cyclone IV E                                         ;
+; Device                             ; EP4CE115F29C7                                        ;
+; Timing Models                      ; Final                                                ;
+; Total logic elements               ; 5,044 / 114,480 ( 4 % )                              ;
+;     Total combinational functions  ; 4,488 / 114,480 ( 4 % )                              ;
+;     Dedicated logic registers      ; 3,040 / 114,480 ( 3 % )                              ;
+; Total registers                    ; 3254                                                 ;
+; Total pins                         ; 204 / 529 ( 39 % )                                   ;
+; Total virtual pins                 ; 0                                                    ;
+; Total memory bits                  ; 100,288 / 3,981,312 ( 3 % )                          ;
+; Embedded Multiplier 9-bit elements ; 4 / 532 ( < 1 % )                                    ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                                       ;
++------------------------------------+------------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/06/2022 19:00:02 ;
+; Start date & time ; 05/08/2022 14:18:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; hw3                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------------+---------------+--------------+------------+
 ; Assignment Name                     ; Value                                                          ; Default Value ; Entity Name  ; Section Id ;
 +-------------------------------------+----------------------------------------------------------------+---------------+--------------+------------+
-; COMPILER_SIGNATURE_ID               ; 229549759685482.165188880111660                                ; --            ; --           ; --         ;
+; COMPILER_SIGNATURE_ID               ; 929353039616.165204469226160                                   ; --            ; --           ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                             ; --            ; --           ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                              ; --            ; --           ; --         ;
 ; MISC_FILE                           ; niosdramproc/synthesis/../niosdramproc.cmp                     ; --            ; --           ; --         ;
@@ -100,11 +100,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:01:28     ; 1.0                     ; 5007 MB             ; 00:02:04                           ;
-; Fitter                    ; 00:00:47     ; 1.0                     ; 5575 MB             ; 00:00:56                           ;
-; Assembler                 ; 00:00:06     ; 1.0                     ; 4706 MB             ; 00:00:06                           ;
-; TimeQuest Timing Analyzer ; 00:00:07     ; 1.1                     ; 4879 MB             ; 00:00:07                           ;
-; Total                     ; 00:02:28     ; --                      ; --                  ; 00:03:13                           ;
+; Analysis & Synthesis      ; 00:00:45     ; 1.0                     ; 5066 MB             ; 00:01:00                           ;
+; Fitter                    ; 00:00:24     ; 1.1                     ; 6401 MB             ; 00:00:40                           ;
+; Assembler                 ; 00:00:03     ; 1.0                     ; 4709 MB             ; 00:00:03                           ;
+; TimeQuest Timing Analyzer ; 00:00:04     ; 1.4                     ; 5001 MB             ; 00:00:05                           ;
+; Total                     ; 00:01:16     ; --                      ; --                  ; 00:01:48                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -113,10 +113,10 @@ refer to the applicable agreement for further details.
 +---------------------------+------------------+------------+------------+----------------+
 ; Module Name               ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +---------------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis      ; DESKTOP-25TCLF9  ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter                    ; DESKTOP-25TCLF9  ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler                 ; DESKTOP-25TCLF9  ; Windows 10 ; 10.0       ; x86_64         ;
-; TimeQuest Timing Analyzer ; DESKTOP-25TCLF9  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis      ; DESKTOP-BB3KAI3  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter                    ; DESKTOP-BB3KAI3  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler                 ; DESKTOP-BB3KAI3  ; Windows 10 ; 10.0       ; x86_64         ;
+; TimeQuest Timing Analyzer ; DESKTOP-BB3KAI3  ; Windows 10 ; 10.0       ; x86_64         ;
 +---------------------------+------------------+------------+------------+----------------+
 
 

@@ -1,6 +1,6 @@
 TimeQuest Timing Analyzer report for hw3
-Fri May 06 19:02:44 2022
-Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Sun May 08 14:19:38 2022
+Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
 
 
 ---------------------
@@ -85,18 +85,18 @@ refer to the applicable agreement for further details.
 
 
 
-+-----------------------------------------------------------------------------+
-; TimeQuest Timing Analyzer Summary                                           ;
-+-----------------------+-----------------------------------------------------+
-; Quartus Prime Version ; Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
-; Timing Analyzer       ; TimeQuest                                           ;
-; Revision Name         ; hw3                                                 ;
-; Device Family         ; Cyclone IV E                                        ;
-; Device Name           ; EP4CE115F29C7                                       ;
-; Timing Models         ; Final                                               ;
-; Delay Model           ; Combined                                            ;
-; Rise/Fall Delays      ; Enabled                                             ;
-+-----------------------+-----------------------------------------------------+
++--------------------------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                                    ;
++-----------------------+--------------------------------------------------------------+
+; Quartus Prime Version ; Version 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition ;
+; Timing Analyzer       ; TimeQuest                                                    ;
+; Revision Name         ; hw3                                                          ;
+; Device Family         ; Cyclone IV E                                                 ;
+; Device Name           ; EP4CE115F29C7                                                ;
+; Timing Models         ; Final                                                        ;
+; Delay Model           ; Combined                                                     ;
+; Rise/Fall Delays      ; Enabled                                                      ;
++-----------------------+--------------------------------------------------------------+
 
 
 +------------------------------------------+
@@ -104,15 +104,16 @@ refer to the applicable agreement for further details.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 4           ;
-; Maximum allowed            ; 2           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
-; Average used               ; 1.10        ;
-; Maximum used               ; 2           ;
+; Average used               ; 1.37        ;
+; Maximum used               ; 12          ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;  10.4%      ;
+;     Processor 2            ;   3.6%      ;
+;     Processors 3-12        ;   3.4%      ;
 +----------------------------+-------------+
 
 
@@ -121,8 +122,8 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+--------+--------------------------+
 ; SDC File Path                                                 ; Status ; Read at                  ;
 +---------------------------------------------------------------+--------+--------------------------+
-; niosdramproc/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Fri May 06 19:02:40 2022 ;
-; niosdramproc/synthesis/submodules/niosdramproc_joseproc3.sdc  ; OK     ; Fri May 06 19:02:40 2022 ;
+; niosdramproc/synthesis/submodules/altera_reset_controller.sdc ; OK     ; Sun May 08 14:19:35 2022 ;
+; niosdramproc/synthesis/submodules/niosdramproc_joseproc3.sdc  ; OK     ; Sun May 08 14:19:35 2022 ;
 +---------------------------------------------------------------+--------+--------------------------+
 
 
@@ -3048,12 +3049,12 @@ No non-DPA dedicated SERDES Receiver circuitry present in device or used in desi
 +------------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime TimeQuest Timing Analyzer
-    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
-    Info: Processing started: Fri May 06 19:02:37 2022
+    Info: Version 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
+    Info: Processing started: Sun May 08 14:19:33 2022
 Info: Command: quartus_sta hw3 -c hw3
 Info: qsta_default_script.tcl version: #3
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 2 of the 2 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Info (21077): Low junction temperature is 0 degrees C
 Info (21077): High junction temperature is 85 degrees C
 Info (332164): Evaluating HDL-embedded SDC commands
@@ -3230,9 +3231,9 @@ Info (332114): Report Metastability: Found 4 synchronizer chains.
 Info (332102): Design is not fully constrained for setup requirements
 Info (332102): Design is not fully constrained for hold requirements
 Info: Quartus Prime TimeQuest Timing Analyzer was successful. 0 errors, 25 warnings
-    Info: Peak virtual memory: 4879 megabytes
-    Info: Processing ended: Fri May 06 19:02:44 2022
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:08
+    Info: Peak virtual memory: 5001 megabytes
+    Info: Processing ended: Sun May 08 14:19:38 2022
+    Info: Elapsed time: 00:00:05
+    Info: Total CPU time (on all processors): 00:00:05
 
 

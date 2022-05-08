@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 6, 2022 7:06:59 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1651889219941</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 8, 2022 2:23:15 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1652044995747</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\macie\Documents\spring22\ECE178\178hw3\software\project_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\niosdramproc.sopcinfo</SopcDesignFile>

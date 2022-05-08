@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <EnsembleReport name="alt_sld_fab" kind="alt_sld_fab" version="1.0" fabric="QSYS">
- <!-- Format version 17.1 590 (Future versions may contain additional information.) -->
- <!-- 2022.05.06.19:00:53 -->
+ <!-- Format version 17.1 593 (Future versions may contain additional information.) -->
+ <!-- 2022.05.08.14:18:40 -->
  <!-- A collection of modules and connections -->
  <parameter name="AUTO_DEVICE_FAMILY">
   <type>java.lang.String</type>
@@ -3429,6 +3429,6 @@ parameters are a RESULT of the module parameters. -->
   <displayName>Clock Connection</displayName>
   <version>17.1</version>
  </plugin>
- <reportVersion>17.1 590</reportVersion>
+ <reportVersion>17.1 593</reportVersion>
  <uniqueIdentifier></uniqueIdentifier>
 </EnsembleReport>
