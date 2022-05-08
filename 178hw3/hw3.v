@@ -3,7 +3,7 @@
 module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 				HEX4, HEX5, HEX6, HEX7, LEDG, LEDR, DRAM_CLK, DRAM_CKE,
 				DRAM_ADDR, DRAM_BA, DRAM_CS_N, DRAM_CAS_N, DRAM_RAS_N,
-				DRAM_WE_N, DRAM_DQ, DRAM_DQM);
+				DRAM_WE_N, DRAM_DQ, DRAM_DQM, GPIO, UART_RXD, UART_TXD);
 				
 		input  wire        CLOCK_50;         //      clk.clk
 		output wire [6:0]  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;
@@ -17,6 +17,9 @@ module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 		output DRAM_CKE, DRAM_CS_N, DRAM_WE_N;
 		output [3:0] DRAM_DQM;
 		inout [31:0] DRAM_DQ;
+		inout [39:0] GPIO;
+		input UART_RXD;
+		output UART_TXD;
 
 		
 		niosdramproc u0 (
@@ -43,7 +46,11 @@ module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 		.sdram_wire_dqm    (DRAM_DQM),    //           .dqm
 		.sdram_wire_ras_n  (DRAM_RAS_N),  //           .ras_n
 		.sdram_wire_we_n   (DRAM_WE_N),   //           .we_n
-		.sdram_clk_clk (DRAM_CLK)
+		.sdram_clk_clk (DRAM_CLK),
+		.uart_RXD          (UART_RXD),          //       uart.RXD
+		.uart_TXD          (UART_TXD),          //           .TXD
+		.mot_1_export      (GPIO[3:0]),      //      mot_1.export
+		.mot_0_export      (GPIO[7:4])       //      mot_0.export
 	);
 
 endmodule 

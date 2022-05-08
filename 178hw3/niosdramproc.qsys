@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "8240";
+         value = "8272";
          type = "String";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "8288";
+         value = "8320";
          type = "String";
       }
    }
@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "8272";
+         value = "8304";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "8256";
+         value = "8288";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "8352";
+         value = "8384";
          type = "String";
       }
    }
@@ -106,7 +106,7 @@
    {
       datum baseAddress
       {
-         value = "8336";
+         value = "8368";
          type = "String";
       }
    }
@@ -122,7 +122,7 @@
    {
       datum baseAddress
       {
-         value = "8320";
+         value = "8352";
          type = "String";
       }
    }
@@ -138,7 +138,7 @@
    {
       datum baseAddress
       {
-         value = "8304";
+         value = "8336";
          type = "String";
       }
    }
@@ -159,7 +159,7 @@
       }
       datum baseAddress
       {
-         value = "8400";
+         value = "8432";
          type = "String";
       }
    }
@@ -175,7 +175,7 @@
    {
       datum baseAddress
       {
-         value = "8224";
+         value = "8256";
          type = "String";
       }
    }
@@ -191,7 +191,7 @@
    {
       datum baseAddress
       {
-         value = "8368";
+         value = "8400";
          type = "String";
       }
    }
@@ -207,7 +207,7 @@
    {
       datum baseAddress
       {
-         value = "8416";
+         value = "8448";
          type = "String";
       }
    }
@@ -257,7 +257,39 @@
       }
       datum baseAddress
       {
-         value = "8424";
+         value = "8464";
+         type = "String";
+      }
+   }
+   element mot_0
+   {
+      datum _sortIndex
+      {
+         value = "19";
+         type = "int";
+      }
+   }
+   element mot_0.s1
+   {
+      datum baseAddress
+      {
+         value = "8240";
+         type = "String";
+      }
+   }
+   element mot_1
+   {
+      datum _sortIndex
+      {
+         value = "20";
+         type = "int";
+      }
+   }
+   element mot_1.s1
+   {
+      datum baseAddress
+      {
+         value = "8224";
          type = "String";
       }
    }
@@ -323,7 +355,7 @@
       }
       datum baseAddress
       {
-         value = "8384";
+         value = "8416";
          type = "String";
       }
    }
@@ -340,6 +372,22 @@
       datum baseAddress
       {
          value = "8192";
+         type = "String";
+      }
+   }
+   element uart
+   {
+      datum _sortIndex
+      {
+         value = "21";
+         type = "int";
+      }
+   }
+   element uart.avalon_rs232_slave
+   {
+      datum baseAddress
+      {
+         value = "8456";
          type = "String";
       }
    }
@@ -416,6 +464,16 @@
    type="conduit"
    dir="end" />
  <interface
+   name="mot_0"
+   internal="mot_0.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="mot_1"
+   internal="mot_1.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
    name="pushbutton"
    internal="Push_buttons.external_connection"
    type="conduit"
@@ -426,6 +484,11 @@
  <interface
    name="switches"
    internal="switches.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="uart"
+   internal="uart.external_interface"
    type="conduit"
    dir="end" />
  <module name="Hex_0" kind="altera_avalon_pio" version="17.1" enabled="1">
@@ -619,7 +682,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="28" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' /><slave name='joseproc3.jtag_debug_module' start='0x1800' end='0x2000' /><slave name='sys_clock_timer.s1' start='0x2000' end='0x2020' /><slave name='LEDR.s1' start='0x2020' end='0x2030' /><slave name='Hex_0.s1' start='0x2030' end='0x2040' /><slave name='Hex_3.s1' start='0x2040' end='0x2050' /><slave name='Hex_2.s1' start='0x2050' end='0x2060' /><slave name='Hex_1.s1' start='0x2060' end='0x2070' /><slave name='Hex_7.s1' start='0x2070' end='0x2080' /><slave name='Hex_6.s1' start='0x2080' end='0x2090' /><slave name='Hex_5.s1' start='0x2090' end='0x20A0' /><slave name='Hex_4.s1' start='0x20A0' end='0x20B0' /><slave name='Push_buttons.s1' start='0x20B0' end='0x20C0' /><slave name='switches.s1' start='0x20C0' end='0x20D0' /><slave name='LEDG.s1' start='0x20D0' end='0x20E0' /><slave name='SYSID.control_slave' start='0x20E0' end='0x20E8' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x20E8' end='0x20F0' /><slave name='sdram.s1' start='0x8000000' end='0x10000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' /><slave name='joseproc3.jtag_debug_module' start='0x1800' end='0x2000' /><slave name='sys_clock_timer.s1' start='0x2000' end='0x2020' /><slave name='mot_1.s1' start='0x2020' end='0x2030' /><slave name='mot_0.s1' start='0x2030' end='0x2040' /><slave name='LEDR.s1' start='0x2040' end='0x2050' /><slave name='Hex_0.s1' start='0x2050' end='0x2060' /><slave name='Hex_3.s1' start='0x2060' end='0x2070' /><slave name='Hex_2.s1' start='0x2070' end='0x2080' /><slave name='Hex_1.s1' start='0x2080' end='0x2090' /><slave name='Hex_7.s1' start='0x2090' end='0x20A0' /><slave name='Hex_6.s1' start='0x20A0' end='0x20B0' /><slave name='Hex_5.s1' start='0x20B0' end='0x20C0' /><slave name='Hex_4.s1' start='0x20C0' end='0x20D0' /><slave name='Push_buttons.s1' start='0x20D0' end='0x20E0' /><slave name='switches.s1' start='0x20E0' end='0x20F0' /><slave name='LEDG.s1' start='0x20F0' end='0x2100' /><slave name='SYSID.control_slave' start='0x2100' end='0x2108' /><slave name='uart.avalon_rs232_slave' start='0x2108' end='0x2110' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2110' end='0x2118' /><slave name='sdram.s1' start='0x8000000' end='0x10000000' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -647,7 +710,7 @@
   <parameter name="impl" value="Fast" />
   <parameter name="instAddrWidth" value="28" />
   <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' /><slave name='joseproc3.jtag_debug_module' start='0x1800' end='0x2000' /><slave name='sdram.s1' start='0x8000000' end='0x10000000' /></address-map>]]></parameter>
-  <parameter name="internalIrqMaskSystemInfo" value="35" />
+  <parameter name="internalIrqMaskSystemInfo" value="39" />
   <parameter name="manuallyAssignCpuID" value="true" />
   <parameter name="mmu_TLBMissExcOffset" value="0" />
   <parameter name="mmu_TLBMissExcSlave" value="None" />
@@ -755,6 +818,34 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
+ <module name="mot_0" kind="altera_avalon_pio" version="17.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="4" />
+ </module>
+ <module name="mot_1" kind="altera_avalon_pio" version="17.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="4" />
+ </module>
  <module
    name="onchip_memory2_0"
    kind="altera_avalon_onchip_memory2"
@@ -846,13 +937,31 @@
   <parameter name="timeoutPulseOutput" value="false" />
   <parameter name="watchdogPulse" value="2" />
  </module>
+ <module name="uart" kind="altera_up_avalon_rs232" version="17.1" enabled="1">
+  <parameter name="AUTO_CLK_CLOCK_RATE" value="50000000" />
+  <parameter name="AUTO_DEVICE_FAMILY" value="Cyclone IV E" />
+  <parameter name="avalon_bus_type" value="Memory Mapped" />
+  <parameter name="baud" value="9600" />
+  <parameter name="data_bits" value="8" />
+  <parameter name="parity" value="None" />
+  <parameter name="stop_bits" value="1" />
+ </module>
  <connection
    kind="avalon"
    version="17.1"
    start="joseproc3.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20e8" />
+  <parameter name="baseAddress" value="0x2110" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="joseproc3.data_master"
+   end="uart.avalon_rs232_slave">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2108" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -861,7 +970,7 @@
    start="joseproc3.data_master"
    end="SYSID.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20e0" />
+  <parameter name="baseAddress" value="0x2100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -879,7 +988,7 @@
    start="joseproc3.data_master"
    end="LEDG.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20d0" />
+  <parameter name="baseAddress" value="0x20f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -888,7 +997,7 @@
    start="joseproc3.data_master"
    end="switches.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20c0" />
+  <parameter name="baseAddress" value="0x20e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -924,7 +1033,7 @@
    start="joseproc3.data_master"
    end="Push_buttons.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20b0" />
+  <parameter name="baseAddress" value="0x20d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -933,7 +1042,7 @@
    start="joseproc3.data_master"
    end="Hex_4.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20a0" />
+  <parameter name="baseAddress" value="0x20c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -942,7 +1051,7 @@
    start="joseproc3.data_master"
    end="Hex_5.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2090" />
+  <parameter name="baseAddress" value="0x20b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -951,7 +1060,7 @@
    start="joseproc3.data_master"
    end="Hex_6.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2080" />
+  <parameter name="baseAddress" value="0x20a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -960,7 +1069,7 @@
    start="joseproc3.data_master"
    end="Hex_7.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2070" />
+  <parameter name="baseAddress" value="0x2090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -969,7 +1078,7 @@
    start="joseproc3.data_master"
    end="Hex_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2060" />
+  <parameter name="baseAddress" value="0x2080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -978,7 +1087,7 @@
    start="joseproc3.data_master"
    end="Hex_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2050" />
+  <parameter name="baseAddress" value="0x2070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -987,7 +1096,7 @@
    start="joseproc3.data_master"
    end="Hex_3.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2040" />
+  <parameter name="baseAddress" value="0x2060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -996,7 +1105,7 @@
    start="joseproc3.data_master"
    end="Hex_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2030" />
+  <parameter name="baseAddress" value="0x2050" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1004,6 +1113,24 @@
    version="17.1"
    start="joseproc3.data_master"
    end="LEDR.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="joseproc3.data_master"
+   end="mot_0.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2030" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="joseproc3.data_master"
+   end="mot_1.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x2020" />
   <parameter name="defaultConnection" value="false" />
@@ -1068,11 +1195,21 @@
    start="clocks.sys_clk"
    end="jtag_uart_0.clk" />
  <connection kind="clock" version="17.1" start="clocks.sys_clk" end="SYSID.clk" />
+ <connection kind="clock" version="17.1" start="clocks.sys_clk" end="mot_0.clk" />
+ <connection kind="clock" version="17.1" start="clocks.sys_clk" end="mot_1.clk" />
+ <connection kind="clock" version="17.1" start="clocks.sys_clk" end="uart.clk" />
  <connection
    kind="clock"
    version="17.1"
    start="clocks.sys_clk"
    end="onchip_memory2_0.clk1" />
+ <connection
+   kind="interrupt"
+   version="17.1"
+   start="joseproc3.d_irq"
+   end="uart.interrupt">
+  <parameter name="irqNumber" value="2" />
+ </connection>
  <connection
    kind="interrupt"
    version="17.1"
@@ -1173,6 +1310,21 @@
    kind="reset"
    version="17.1"
    start="joseproc3.jtag_debug_module_reset"
+   end="mot_0.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="joseproc3.jtag_debug_module_reset"
+   end="mot_1.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="joseproc3.jtag_debug_module_reset"
+   end="uart.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="joseproc3.jtag_debug_module_reset"
    end="onchip_memory2_0.reset1" />
  <connection
    kind="reset"
@@ -1259,6 +1411,21 @@
    version="17.1"
    start="clocks.reset_source"
    end="SYSID.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clocks.reset_source"
+   end="mot_0.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clocks.reset_source"
+   end="mot_1.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clocks.reset_source"
+   end="uart.reset" />
  <connection
    kind="reset"
    version="17.1"
