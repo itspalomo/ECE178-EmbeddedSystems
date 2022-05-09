@@ -2,6 +2,8 @@ Archive member included to satisfy reference by file (symbol)
 
 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
                               obj/default/hello_world_small.o (__udivsi3)
+../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+                              obj/default/hello_world_small.o (alt_getchar)
 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
                               ../smart_car_bsp//obj/HAL/src/crt0.o (alt_load)
 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
@@ -12,16 +14,18 @@ c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-el
                               ../smart_car_bsp/\libhal_bsp.a(alt_printf.o) (alt_putchar)
 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
                               ../smart_car_bsp/\libhal_bsp.a(alt_main.o) (alt_irq_init)
+../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+                              ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o) (altera_avalon_jtag_uart_read)
 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
                               ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o) (altera_avalon_jtag_uart_write)
 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
                               ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o) (alt_avalon_timer_sc_init)
 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
-                              ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o) (alt_up_rs232_read_fd)
+                              obj/default/hello_world_small.o (alt_up_rs232_enable_read_interrupt)
 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
                               ../smart_car_bsp/\libhal_bsp.a(alt_load.o) (alt_dcache_flush_all)
 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
-                              ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o) (alt_dev_list)
+                              ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o) (alt_fd_list)
 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
                               ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o) (alt_dev_llist_insert)
 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
@@ -148,7 +152,7 @@ LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nio
                 0x0000000008000158                PROVIDE (__ram_exceptions_end, ABSOLUTE (.))
                 0x0000000008000020                PROVIDE (__flash_exceptions_start, LOADADDR (.exceptions))
 
-.text           0x0000000008000158      0xb7c
+.text           0x0000000008000158      0xcac
                 [!provide]                        PROVIDE (stext, ABSOLUTE (.))
  *(.interp)
  *(.hash)
@@ -195,79 +199,84 @@ LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nio
  *(.text .stub .text.* .gnu.linkonce.t.*)
  .text          0x0000000008000158       0x4c ../smart_car_bsp//obj/HAL/src/crt0.o
                 0x0000000008000158                _start
- .text          0x00000000080001a4      0x128 obj/default/hello_world_small.o
-                0x00000000080001a4                clearhex
-                0x00000000080001ec                decimal_to_hex
- .text.startup  0x00000000080002cc       0x2c obj/default/hello_world_small.o
-                0x00000000080002cc                main
- .text          0x00000000080002f8      0x1b4 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
-                0x00000000080002f8                __divsi3
-                0x000000000800037c                __modsi3
-                0x00000000080003f0                __udivsi3
-                0x0000000008000454                __umodsi3
- .text          0x00000000080004ac       0xe0 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
-                0x00000000080004ac                alt_load
- .text          0x000000000800058c       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
-                0x000000000800058c                alt_main
- .text          0x00000000080005b8      0x170 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
-                0x00000000080005b8                alt_printf
- .text          0x0000000008000728       0x48 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
-                0x0000000008000728                alt_putchar
- .text          0x0000000008000770       0x54 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
-                0x0000000008000770                alt_irq_init
-                0x0000000008000790                alt_sys_init
- .text          0x00000000080007c4       0x34 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
-                0x00000000080007c4                altera_avalon_jtag_uart_write
- .text          0x00000000080007f8       0x64 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
-                0x0000000008000834                alt_avalon_timer_sc_init
- .text          0x000000000800085c      0x160 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
-                0x000000000800085c                alt_up_rs232_enable_read_interrupt
-                0x0000000008000874                alt_up_rs232_disable_read_interrupt
-                0x0000000008000890                alt_up_rs232_get_used_space_in_read_FIFO
-                0x00000000080008a0                alt_up_rs232_get_available_space_in_write_FIFO
-                0x00000000080008b0                alt_up_rs232_check_parity
-                0x00000000080008bc                alt_up_rs232_write_data
-                0x00000000080008d0                alt_up_rs232_read_data
-                0x000000000800091c                alt_up_rs232_read_fd
-                0x000000000800098c                alt_up_rs232_write_fd
-                0x00000000080009b4                alt_up_rs232_open_dev
- .text          0x00000000080009bc       0x18 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
-                0x00000000080009bc                alt_dcache_flush_all
- .text          0x00000000080009d4        0x8 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
- .text          0x00000000080009dc       0x6c ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
-                0x00000000080009dc                alt_dev_llist_insert
- .text          0x0000000008000a48        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
- .text          0x0000000008000a48       0x74 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
-                0x0000000008000a48                alt_find_dev
- .text          0x0000000008000abc        0xc ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
-                0x0000000008000abc                alt_icache_flush_all
- .text          0x0000000008000ac8       0x94 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
-                0x0000000008000ac8                alt_irq_register
- .text          0x0000000008000b5c        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
- .text          0x0000000008000b5c       0xec ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
-                0x0000000008000b5c                alt_alarm_stop
-                0x0000000008000b90                alt_tick
- .text          0x0000000008000c48        0x8 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
-                0x0000000008000c48                altera_nios2_qsys_irq_init
- .text          0x0000000008000c50       0x38 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
-                0x0000000008000c50                alt_icache_flush
- .text          0x0000000008000c88        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
- .text          0x0000000008000c88        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .text          0x0000000008000c88        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
- .text          0x0000000008000c88        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
- .text          0x0000000008000c88        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .text.memcmp   0x0000000008000c88       0x30 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
-                0x0000000008000c88                memcmp
- .text          0x0000000008000cb8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
- .text.strlen   0x0000000008000cb8       0x1c c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
-                0x0000000008000cb8                strlen
+ .text          0x00000000080001a4      0x1b4 obj/default/hello_world_small.o
+                0x00000000080001a4                taskRS232
+                0x0000000008000230                clearhex
+                0x0000000008000278                decimal_to_hex
+ .text.startup  0x0000000008000358       0x30 obj/default/hello_world_small.o
+                0x0000000008000358                main
+ .text          0x0000000008000388      0x1b4 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+                0x0000000008000388                __divsi3
+                0x000000000800040c                __modsi3
+                0x0000000008000480                __udivsi3
+                0x00000000080004e4                __umodsi3
+ .text          0x000000000800053c       0x44 ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+                0x000000000800053c                alt_getchar
+ .text          0x0000000008000580       0xe0 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+                0x0000000008000580                alt_load
+ .text          0x0000000008000660       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+                0x0000000008000660                alt_main
+ .text          0x000000000800068c      0x170 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+                0x000000000800068c                alt_printf
+ .text          0x00000000080007fc       0x48 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+                0x00000000080007fc                alt_putchar
+ .text          0x0000000008000844       0x54 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x0000000008000844                alt_irq_init
+                0x0000000008000864                alt_sys_init
+ .text          0x0000000008000898       0x5c ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+                0x0000000008000898                altera_avalon_jtag_uart_read
+ .text          0x00000000080008f4       0x34 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x00000000080008f4                altera_avalon_jtag_uart_write
+ .text          0x0000000008000928       0x64 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+                0x0000000008000964                alt_avalon_timer_sc_init
+ .text          0x000000000800098c      0x160 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+                0x000000000800098c                alt_up_rs232_enable_read_interrupt
+                0x00000000080009a4                alt_up_rs232_disable_read_interrupt
+                0x00000000080009c0                alt_up_rs232_get_used_space_in_read_FIFO
+                0x00000000080009d0                alt_up_rs232_get_available_space_in_write_FIFO
+                0x00000000080009e0                alt_up_rs232_check_parity
+                0x00000000080009ec                alt_up_rs232_write_data
+                0x0000000008000a00                alt_up_rs232_read_data
+                0x0000000008000a4c                alt_up_rs232_read_fd
+                0x0000000008000abc                alt_up_rs232_write_fd
+                0x0000000008000ae4                alt_up_rs232_open_dev
+ .text          0x0000000008000aec       0x18 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                0x0000000008000aec                alt_dcache_flush_all
+ .text          0x0000000008000b04        0x8 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+ .text          0x0000000008000b0c       0x6c ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+                0x0000000008000b0c                alt_dev_llist_insert
+ .text          0x0000000008000b78        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+ .text          0x0000000008000b78       0x74 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+                0x0000000008000b78                alt_find_dev
+ .text          0x0000000008000bec        0xc ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                0x0000000008000bec                alt_icache_flush_all
+ .text          0x0000000008000bf8       0x94 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+                0x0000000008000bf8                alt_irq_register
+ .text          0x0000000008000c8c        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+ .text          0x0000000008000c8c       0xec ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+                0x0000000008000c8c                alt_alarm_stop
+                0x0000000008000cc0                alt_tick
+ .text          0x0000000008000d78        0x8 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+                0x0000000008000d78                altera_nios2_qsys_irq_init
+ .text          0x0000000008000d80       0x38 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                0x0000000008000d80                alt_icache_flush
+ .text          0x0000000008000db8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
+ .text          0x0000000008000db8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .text          0x0000000008000db8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
+ .text          0x0000000008000db8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+ .text          0x0000000008000db8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .text.memcmp   0x0000000008000db8       0x30 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+                0x0000000008000db8                memcmp
+ .text          0x0000000008000de8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .text.strlen   0x0000000008000de8       0x1c c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+                0x0000000008000de8                strlen
  *(.gnu.warning.*)
  *(.fini)
                 [!provide]                        PROVIDE (__etext, ABSOLUTE (.))
                 [!provide]                        PROVIDE (_etext, ABSOLUTE (.))
                 [!provide]                        PROVIDE (etext, ABSOLUTE (.))
  *(.eh_frame_hdr)
-                0x0000000008000cd4                . = ALIGN (0x4)
+                0x0000000008000e04                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (__preinit_array_start, ABSOLUTE (.))
  *(.preinit_array)
                 [!provide]                        PROVIDE (__preinit_array_end, ABSOLUTE (.))
@@ -289,158 +298,161 @@ LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nio
  *(SORT(.dtors.*))
                 [!provide]                        PROVIDE (__DTOR_END__, ABSOLUTE (.))
  *(.jcr)
-                0x0000000008000cd4                . = ALIGN (0x4)
+                0x0000000008000e04                . = ALIGN (0x4)
 
-.rodata         0x0000000008000cd4       0x28
-                0x0000000008000cd4                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
-                0x0000000008000cd4                . = ALIGN (0x4)
+.rodata         0x0000000008000e04       0xa4
+                0x0000000008000e04                PROVIDE (__ram_rodata_start, ABSOLUTE (.))
+                0x0000000008000e04                . = ALIGN (0x4)
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.4
-                0x0000000008000cd4        0xe obj/default/hello_world_small.o
- *fill*         0x0000000008000ce2        0x2 
+                0x0000000008000e04       0x96 obj/default/hello_world_small.o
  .rodata.str1.4
-                0x0000000008000ce4        0xa ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- *fill*         0x0000000008000cee        0x2 
+                0x0000000008000e9a        0xa ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ *fill*         0x0000000008000e9a        0x2 
  .rodata.str1.4
-                0x0000000008000cf0        0xc ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+                0x0000000008000e9c        0xc ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
                                           0xa (size before relaxing)
  *(.rodata1)
-                0x0000000008000cfc                . = ALIGN (0x4)
-                0x0000000008000cfc                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
-                0x0000000008000cd4                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
+                0x0000000008000ea8                . = ALIGN (0x4)
+                0x0000000008000ea8                PROVIDE (__ram_rodata_end, ABSOLUTE (.))
+                0x0000000008000e04                PROVIDE (__flash_rodata_start, LOADADDR (.rodata))
 
-.rwdata         0x0000000008000cfc       0xd0 load address 0x0000000008000dcc
-                0x0000000008000cfc                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
-                0x0000000008000cfc                . = ALIGN (0x4)
+.rwdata         0x0000000008000ea8       0xd0 load address 0x0000000008000f78
+                0x0000000008000ea8                PROVIDE (__ram_rwdata_start, ABSOLUTE (.))
+                0x0000000008000ea8                . = ALIGN (0x4)
  *(.got.plt)
  *(.got)
  *(.data1)
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x0000000008000cfc        0x0 ../smart_car_bsp//obj/HAL/src/crt0.o
- .data          0x0000000008000cfc       0x28 obj/default/hello_world_small.o
-                0x0000000008000cfc                hextable
- .data          0x0000000008000d24        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
- .data          0x0000000008000d24        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
- .data          0x0000000008000d24        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
- .data          0x0000000008000d24        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
- .data          0x0000000008000d24        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
- .data          0x0000000008000d24       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- .data          0x0000000008000d50        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .data          0x0000000008000d50        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
- .data          0x0000000008000d50        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
- .data          0x0000000008000d50        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .data          0x0000000008000d50       0x58 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
-                0x0000000008000d50                alt_fd_list
-                0x0000000008000d80                alt_dev_null
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .data          0x0000000008000da8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
- .data          0x0000000008000da8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
- .data          0x0000000008000da8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .data          0x0000000008000da8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
-                0x0000000008008da8                _gp = ABSOLUTE ((. + 0x8000))
+ .data          0x0000000008000ea8        0x0 ../smart_car_bsp//obj/HAL/src/crt0.o
+ .data          0x0000000008000ea8       0x28 obj/default/hello_world_small.o
+                0x0000000008000ea8                hextable
+ .data          0x0000000008000ed0        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .data          0x0000000008000ed0        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+ .data          0x0000000008000ed0        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+ .data          0x0000000008000ed0        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+ .data          0x0000000008000ed0        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+ .data          0x0000000008000ed0        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+ .data          0x0000000008000ed0       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .data          0x0000000008000efc        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .data          0x0000000008000efc        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .data          0x0000000008000efc        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .data          0x0000000008000efc        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+ .data          0x0000000008000efc        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .data          0x0000000008000efc       0x58 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+                0x0000000008000efc                alt_fd_list
+                0x0000000008000f2c                alt_dev_null
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .data          0x0000000008000f54        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
+ .data          0x0000000008000f54        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+ .data          0x0000000008000f54        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .data          0x0000000008000f54        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+                0x0000000008008f54                _gp = ABSOLUTE ((. + 0x8000))
                 [!provide]                        PROVIDE (gp, _gp)
  *(.rwdata .rwdata.*)
  *(.sdata .sdata.* .gnu.linkonce.s.*)
- .sdata         0x0000000008000da8        0x4 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
-                0x0000000008000da8                jtag_uart_0
- .sdata         0x0000000008000dac       0x14 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
-                0x0000000008000dac                alt_max_fd
-                0x0000000008000db0                alt_dev_list
-                0x0000000008000db8                alt_fs_list
- .sdata         0x0000000008000dc0        0x4 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
-                0x0000000008000dc0                alt_errno
- .sdata         0x0000000008000dc4        0x8 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
-                0x0000000008000dc4                alt_alarm_list
+ .sdata         0x0000000008000f54        0x4 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x0000000008000f54                jtag_uart_0
+ .sdata         0x0000000008000f58       0x14 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+                0x0000000008000f58                alt_max_fd
+                0x0000000008000f5c                alt_dev_list
+                0x0000000008000f64                alt_fs_list
+ .sdata         0x0000000008000f6c        0x4 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+                0x0000000008000f6c                alt_errno
+ .sdata         0x0000000008000f70        0x8 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+                0x0000000008000f70                alt_alarm_list
  *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
-                0x0000000008000dcc                . = ALIGN (0x4)
-                0x0000000008000dcc                _edata = ABSOLUTE (.)
+                0x0000000008000f78                . = ALIGN (0x4)
+                0x0000000008000f78                _edata = ABSOLUTE (.)
                 [!provide]                        PROVIDE (edata, ABSOLUTE (.))
-                0x0000000008000dcc                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
-                0x0000000008000dcc                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
+                0x0000000008000f78                PROVIDE (__ram_rwdata_end, ABSOLUTE (.))
+                0x0000000008000f78                PROVIDE (__flash_rwdata_start, LOADADDR (.rwdata))
 
-.bss            0x0000000008000e9c      0x11c
-                0x0000000008000e9c                __bss_start = ABSOLUTE (.)
+.bss            0x0000000008001048      0x11c
+                0x0000000008001048                __bss_start = ABSOLUTE (.)
                 [!provide]                        PROVIDE (__sbss_start, ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_start, ABSOLUTE (.))
  *(.dynsbss)
  *(.sbss .sbss.* .gnu.linkonce.sb.*)
- .sbss          0x0000000008000e9c        0xc ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
-                0x0000000008000e9c                alt_envp
-                0x0000000008000ea0                alt_argv
-                0x0000000008000ea4                alt_argc
- .sbss          0x0000000008000ea8        0x4 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
-                0x0000000008000ea8                alt_irq_active
- .sbss          0x0000000008000eac        0x8 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
-                0x0000000008000eac                _alt_nticks
-                0x0000000008000eb0                _alt_tick_rate
- .sbss          0x0000000008000eb4        0x4 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
-                0x0000000008000eb4                errno
+ .sbss          0x0000000008001048        0xc ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+                0x0000000008001048                alt_envp
+                0x000000000800104c                alt_argv
+                0x0000000008001050                alt_argc
+ .sbss          0x0000000008001054        0x4 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+                0x0000000008001054                alt_irq_active
+ .sbss          0x0000000008001058        0x8 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+                0x0000000008001058                _alt_nticks
+                0x000000000800105c                _alt_tick_rate
+ .sbss          0x0000000008001060        0x4 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+                0x0000000008001060                errno
  *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
  *(.scommon)
                 [!provide]                        PROVIDE (__sbss_end, ABSOLUTE (.))
                 [!provide]                        PROVIDE (___sbss_end, ABSOLUTE (.))
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp//obj/HAL/src/crt0.o
- .bss           0x0000000008000eb8        0x0 obj/default/hello_world_small.o
- .bss           0x0000000008000eb8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .bss           0x0000000008000eb8        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
- .bss           0x0000000008000eb8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
- .bss           0x0000000008000eb8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .bss           0x0000000008000eb8        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp//obj/HAL/src/crt0.o
+ .bss           0x0000000008001064        0x0 obj/default/hello_world_small.o
+ .bss           0x0000000008001064        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .bss           0x0000000008001064        0x0 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
+ .bss           0x0000000008001064        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+ .bss           0x0000000008001064        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .bss           0x0000000008001064        0x0 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
  *(COMMON)
- COMMON         0x0000000008000eb8      0x100 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
-                0x0000000008000eb8                alt_irq
-                0x0000000008000fb8                . = ALIGN (0x4)
-                0x0000000008000fb8                __bss_end = ABSOLUTE (.)
+ COMMON         0x0000000008001064      0x100 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+                0x0000000008001064                alt_irq
+                0x0000000008001164                . = ALIGN (0x4)
+                0x0000000008001164                __bss_end = ABSOLUTE (.)
 
 .onchip_memory2_0
-                0x0000000000000000        0x0 load address 0x0000000008000fb8
+                0x0000000000000000        0x0 load address 0x0000000008001164
                 [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_start, ABSOLUTE (.))
  *(.onchip_memory2_0 .onchip_memory2_0. onchip_memory2_0.*)
                 0x0000000000000000                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_end, ABSOLUTE (.))
                 [!provide]                        PROVIDE (_alt_partition_onchip_memory2_0_load_addr, LOADADDR (.onchip_memory2_0))
 
-.sdram          0x0000000008000fb8        0x0
+.sdram          0x0000000008001164        0x0
                 [!provide]                        PROVIDE (_alt_partition_sdram_start, ABSOLUTE (.))
  *(.sdram .sdram. sdram.*)
-                0x0000000008000fb8                . = ALIGN (0x4)
+                0x0000000008001164                . = ALIGN (0x4)
                 [!provide]                        PROVIDE (_alt_partition_sdram_end, ABSOLUTE (.))
-                0x0000000008000fb8                _end = ABSOLUTE (.)
-                0x0000000008000fb8                end = ABSOLUTE (.)
-                0x0000000008000fb8                __alt_stack_base = ABSOLUTE (.)
+                0x0000000008001164                _end = ABSOLUTE (.)
+                0x0000000008001164                end = ABSOLUTE (.)
+                0x0000000008001164                __alt_stack_base = ABSOLUTE (.)
                 [!provide]                        PROVIDE (_alt_partition_sdram_load_addr, LOADADDR (.sdram))
 
 .stab
@@ -466,11 +478,13 @@ LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nio
  .comment       0x0000000000000000       0x23 obj/default/hello_world_small.o
                                          0x24 (size before relaxing)
  .comment       0x0000000000000023       0x24 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
  .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
  .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
  .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
  .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
  .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
  .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
  .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
  .comment       0x0000000000000023       0x24 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
@@ -502,7 +516,7 @@ LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nio
 .debug_sfnames
  *(.debug_sfnames)
 
-.debug_aranges  0x0000000000000000      0x3a0
+.debug_aranges  0x0000000000000000      0x3e0
  *(.debug_aranges)
  .debug_aranges
                 0x0000000000000000       0x28 ../smart_car_bsp//obj/HAL/src/crt0.o
@@ -511,249 +525,266 @@ LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nio
  .debug_aranges
                 0x0000000000000050       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
  .debug_aranges
-                0x0000000000000070       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+                0x0000000000000070       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
  .debug_aranges
-                0x0000000000000090       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+                0x0000000000000090       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
  .debug_aranges
-                0x00000000000000b0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+                0x00000000000000b0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
  .debug_aranges
-                0x00000000000000d0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+                0x00000000000000d0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
  .debug_aranges
-                0x00000000000000f0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+                0x00000000000000f0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
  .debug_aranges
-                0x0000000000000110       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+                0x0000000000000110       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
  .debug_aranges
-                0x0000000000000130       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+                0x0000000000000130       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
  .debug_aranges
-                0x0000000000000150       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+                0x0000000000000150       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
  .debug_aranges
-                0x0000000000000170       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+                0x0000000000000170       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
  .debug_aranges
-                0x0000000000000190       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+                0x0000000000000190       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
  .debug_aranges
-                0x00000000000001b0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+                0x00000000000001b0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
  .debug_aranges
-                0x00000000000001d0       0x18 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+                0x00000000000001d0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
  .debug_aranges
-                0x00000000000001e8       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+                0x00000000000001f0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
  .debug_aranges
-                0x0000000000000208       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+                0x0000000000000210       0x18 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
  .debug_aranges
-                0x0000000000000228       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+                0x0000000000000228       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
  .debug_aranges
-                0x0000000000000248       0x18 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+                0x0000000000000248       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
  .debug_aranges
-                0x0000000000000260       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+                0x0000000000000268       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
  .debug_aranges
-                0x0000000000000280       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+                0x0000000000000288       0x18 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
  .debug_aranges
-                0x00000000000002a0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+                0x00000000000002a0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
  .debug_aranges
-                0x00000000000002c0       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
+                0x00000000000002c0       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
  .debug_aranges
-                0x00000000000002f0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+                0x00000000000002e0       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
  .debug_aranges
-                0x0000000000000310       0x38 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
+                0x0000000000000300       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
  .debug_aranges
-                0x0000000000000348       0x18 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+                0x0000000000000330       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
  .debug_aranges
-                0x0000000000000360       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+                0x0000000000000350       0x38 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
  .debug_aranges
-                0x0000000000000380       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+                0x0000000000000388       0x18 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+ .debug_aranges
+                0x00000000000003a0       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .debug_aranges
+                0x00000000000003c0       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
 
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000     0x30f0
+.debug_info     0x0000000000000000     0x39ac
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000       0x78 ../smart_car_bsp//obj/HAL/src/crt0.o
- .debug_info    0x0000000000000078      0x136 obj/default/hello_world_small.o
- .debug_info    0x00000000000001ae      0x2c6 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
- .debug_info    0x0000000000000474      0x1c9 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
- .debug_info    0x000000000000063d      0x184 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
- .debug_info    0x00000000000007c1      0x14d ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_info    0x000000000000090e      0x12a ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_info    0x0000000000000a38      0x47f ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_info    0x0000000000000eb7      0x1a2 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_info    0x0000000000001059      0x283 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
- .debug_info    0x00000000000012dc      0x5f7 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
- .debug_info    0x00000000000018d3       0xa6 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_info    0x0000000000001979      0x499 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
- .debug_info    0x0000000000001e12      0x1b3 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_info    0x0000000000001fc5       0xa6 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
- .debug_info    0x000000000000206b      0x32d ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_info    0x0000000000002398       0xb8 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_info    0x0000000000002450      0x302 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
- .debug_info    0x0000000000002752       0x77 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
- .debug_info    0x00000000000027c9      0x2b4 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
- .debug_info    0x0000000000002a7d       0xad ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .debug_info    0x0000000000002b2a       0xde ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
- .debug_info    0x0000000000002c08       0x81 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
- .debug_info    0x0000000000002c89      0x199 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .debug_info    0x0000000000002e22       0x87 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
- .debug_info    0x0000000000002ea9       0x8a c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
- .debug_info    0x0000000000002f33       0xf4 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .debug_info    0x0000000000003027       0xc9 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .debug_info    0x0000000000000078      0x506 obj/default/hello_world_small.o
+ .debug_info    0x000000000000057e      0x2c6 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .debug_info    0x0000000000000844      0x32d ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+ .debug_info    0x0000000000000b71      0x1c9 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_info    0x0000000000000d3a      0x184 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_info    0x0000000000000ebe      0x14d ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_info    0x000000000000100b      0x12a ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_info    0x0000000000001135      0x47f ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_info    0x00000000000015b4      0x1bf ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_info    0x0000000000001773      0x1a2 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_info    0x0000000000001915      0x283 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_info    0x0000000000001b98      0x5f7 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+ .debug_info    0x000000000000218f       0xa6 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_info    0x0000000000002235      0x499 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+ .debug_info    0x00000000000026ce      0x1b3 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_info    0x0000000000002881       0xa6 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+ .debug_info    0x0000000000002927      0x32d ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_info    0x0000000000002c54       0xb8 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_info    0x0000000000002d0c      0x302 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+ .debug_info    0x000000000000300e       0x77 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+ .debug_info    0x0000000000003085      0x2b4 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+ .debug_info    0x0000000000003339       0xad ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_info    0x00000000000033e6       0xde ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_info    0x00000000000034c4       0x81 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
+ .debug_info    0x0000000000003545      0x199 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .debug_info    0x00000000000036de       0x87 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
+ .debug_info    0x0000000000003765       0x8a c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+ .debug_info    0x00000000000037ef       0xf4 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .debug_info    0x00000000000038e3       0xc9 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
 
-.debug_abbrev   0x0000000000000000     0x16b2
+.debug_abbrev   0x0000000000000000     0x19a6
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000       0x12 ../smart_car_bsp//obj/HAL/src/crt0.o
- .debug_abbrev  0x0000000000000012       0xf6 obj/default/hello_world_small.o
- .debug_abbrev  0x0000000000000108      0x10e c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
- .debug_abbrev  0x0000000000000216       0xd8 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
- .debug_abbrev  0x00000000000002ee       0xf5 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
- .debug_abbrev  0x00000000000003e3       0xd5 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_abbrev  0x00000000000004b8       0xd2 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_abbrev  0x000000000000058a      0x1b2 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_abbrev  0x000000000000073c       0xd5 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_abbrev  0x0000000000000811      0x194 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
- .debug_abbrev  0x00000000000009a5      0x1c0 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
- .debug_abbrev  0x0000000000000b65       0x5a ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_abbrev  0x0000000000000bbf       0xd9 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
- .debug_abbrev  0x0000000000000c98      0x11c ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_abbrev  0x0000000000000db4       0x5a ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
- .debug_abbrev  0x0000000000000e0e      0x125 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_abbrev  0x0000000000000f33       0x6f ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_abbrev  0x0000000000000fa2      0x1a5 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
- .debug_abbrev  0x0000000000001147       0x40 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
- .debug_abbrev  0x0000000000001187      0x198 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
- .debug_abbrev  0x000000000000131f       0x67 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .debug_abbrev  0x0000000000001386       0x9b ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
- .debug_abbrev  0x0000000000001421       0x12 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
- .debug_abbrev  0x0000000000001433      0x138 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .debug_abbrev  0x000000000000156b       0x12 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
- .debug_abbrev  0x000000000000157d       0x37 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
- .debug_abbrev  0x00000000000015b4       0x7f c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .debug_abbrev  0x0000000000001633       0x7f c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .debug_abbrev  0x0000000000000012      0x1cb obj/default/hello_world_small.o
+ .debug_abbrev  0x00000000000001dd      0x10e c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .debug_abbrev  0x00000000000002eb      0x11d ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+ .debug_abbrev  0x0000000000000408       0xd8 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_abbrev  0x00000000000004e0       0xf5 ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_abbrev  0x00000000000005d5       0xd5 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_abbrev  0x00000000000006aa       0xd2 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_abbrev  0x000000000000077c      0x1b2 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_abbrev  0x000000000000092e      0x102 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_abbrev  0x0000000000000a30       0xd5 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_abbrev  0x0000000000000b05      0x194 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_abbrev  0x0000000000000c99      0x1c0 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+ .debug_abbrev  0x0000000000000e59       0x5a ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_abbrev  0x0000000000000eb3       0xd9 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+ .debug_abbrev  0x0000000000000f8c      0x11c ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_abbrev  0x00000000000010a8       0x5a ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+ .debug_abbrev  0x0000000000001102      0x125 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_abbrev  0x0000000000001227       0x6f ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_abbrev  0x0000000000001296      0x1a5 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+ .debug_abbrev  0x000000000000143b       0x40 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+ .debug_abbrev  0x000000000000147b      0x198 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+ .debug_abbrev  0x0000000000001613       0x67 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_abbrev  0x000000000000167a       0x9b ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_abbrev  0x0000000000001715       0x12 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
+ .debug_abbrev  0x0000000000001727      0x138 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .debug_abbrev  0x000000000000185f       0x12 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
+ .debug_abbrev  0x0000000000001871       0x37 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+ .debug_abbrev  0x00000000000018a8       0x7f c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .debug_abbrev  0x0000000000001927       0x7f c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
 
-.debug_line     0x0000000000000000     0x163b
+.debug_line     0x0000000000000000     0x1874
  *(.debug_line)
  .debug_line    0x0000000000000000       0x72 ../smart_car_bsp//obj/HAL/src/crt0.o
- .debug_line    0x0000000000000072       0xfc obj/default/hello_world_small.o
- .debug_line    0x000000000000016e      0x102 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
- .debug_line    0x0000000000000270       0xa4 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
- .debug_line    0x0000000000000314       0xea ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
- .debug_line    0x00000000000003fe      0x112 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_line    0x0000000000000510       0x55 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_line    0x0000000000000565      0x16d ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_line    0x00000000000006d2      0x104 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_line    0x00000000000007d6      0x113 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
- .debug_line    0x00000000000008e9      0x113 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
- .debug_line    0x00000000000009fc       0x5a ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_line    0x0000000000000a56       0xf6 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
- .debug_line    0x0000000000000b4c       0xd8 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_line    0x0000000000000c24       0x51 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
- .debug_line    0x0000000000000c75      0x107 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_line    0x0000000000000d7c       0x6e ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_line    0x0000000000000dea       0xed ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
- .debug_line    0x0000000000000ed7       0x50 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
- .debug_line    0x0000000000000f27      0x118 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
- .debug_line    0x000000000000103f       0x8c ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .debug_line    0x00000000000010cb       0x7d ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
- .debug_line    0x0000000000001148       0x6b ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
- .debug_line    0x00000000000011b3       0xc8 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .debug_line    0x000000000000127b       0xae ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
- .debug_line    0x0000000000001329       0x5c c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
- .debug_line    0x0000000000001385      0x15d c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .debug_line    0x00000000000014e2      0x159 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .debug_line    0x0000000000000072      0x16f obj/default/hello_world_small.o
+ .debug_line    0x00000000000001e1      0x102 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .debug_line    0x00000000000002e3       0xb7 ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+ .debug_line    0x000000000000039a       0xa4 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_line    0x000000000000043e       0xea ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_line    0x0000000000000528      0x112 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_line    0x000000000000063a       0x55 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_line    0x000000000000068f      0x16d ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_line    0x00000000000007fc      0x10f ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_line    0x000000000000090b      0x104 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_line    0x0000000000000a0f      0x113 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_line    0x0000000000000b22      0x113 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+ .debug_line    0x0000000000000c35       0x5a ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_line    0x0000000000000c8f       0xf6 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+ .debug_line    0x0000000000000d85       0xd8 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_line    0x0000000000000e5d       0x51 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+ .debug_line    0x0000000000000eae      0x107 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_line    0x0000000000000fb5       0x6e ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_line    0x0000000000001023       0xed ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+ .debug_line    0x0000000000001110       0x50 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+ .debug_line    0x0000000000001160      0x118 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+ .debug_line    0x0000000000001278       0x8c ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_line    0x0000000000001304       0x7d ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_line    0x0000000000001381       0x6b ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
+ .debug_line    0x00000000000013ec       0xc8 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .debug_line    0x00000000000014b4       0xae ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
+ .debug_line    0x0000000000001562       0x5c c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+ .debug_line    0x00000000000015be      0x15d c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .debug_line    0x000000000000171b      0x159 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
 
-.debug_frame    0x0000000000000000      0x508
+.debug_frame    0x0000000000000000      0x570
  *(.debug_frame)
- .debug_frame   0x0000000000000000       0x60 obj/default/hello_world_small.o
- .debug_frame   0x0000000000000060       0x50 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
- .debug_frame   0x00000000000000b0       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
- .debug_frame   0x00000000000000e0       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
- .debug_frame   0x000000000000010c       0x54 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_frame   0x0000000000000160       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_frame   0x0000000000000190       0x48 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_frame   0x00000000000001d8       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_frame   0x00000000000001f8       0x40 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
- .debug_frame   0x0000000000000238       0xe4 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
- .debug_frame   0x000000000000031c       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_frame   0x000000000000033c       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
- .debug_frame   0x000000000000035c       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_frame   0x0000000000000388       0x3c ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_frame   0x00000000000003c4       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
- .debug_frame   0x00000000000003e4       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
- .debug_frame   0x0000000000000404       0x50 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
- .debug_frame   0x0000000000000454       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
- .debug_frame   0x0000000000000474       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
- .debug_frame   0x0000000000000494       0x34 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .debug_frame   0x00000000000004c8       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .debug_frame   0x00000000000004e8       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .debug_frame   0x0000000000000000       0x7c obj/default/hello_world_small.o
+ .debug_frame   0x000000000000007c       0x50 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .debug_frame   0x00000000000000cc       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+ .debug_frame   0x00000000000000f8       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_frame   0x0000000000000128       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_frame   0x0000000000000154       0x54 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_frame   0x00000000000001a8       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_frame   0x00000000000001d8       0x48 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_frame   0x0000000000000220       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_frame   0x0000000000000240       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_frame   0x0000000000000260       0x40 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_frame   0x00000000000002a0       0xe4 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+ .debug_frame   0x0000000000000384       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_frame   0x00000000000003a4       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+ .debug_frame   0x00000000000003c4       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_frame   0x00000000000003f0       0x3c ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_frame   0x000000000000042c       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_frame   0x000000000000044c       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+ .debug_frame   0x000000000000046c       0x50 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+ .debug_frame   0x00000000000004bc       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_frame   0x00000000000004dc       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_frame   0x00000000000004fc       0x34 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .debug_frame   0x0000000000000530       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .debug_frame   0x0000000000000550       0x20 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
 
-.debug_str      0x0000000000000000      0xec7
+.debug_str      0x0000000000000000      0xf85
  *(.debug_str)
- .debug_str     0x0000000000000000      0x14e obj/default/hello_world_small.o
-                                        0x18c (size before relaxing)
- .debug_str     0x000000000000014e      0x16d c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .debug_str     0x0000000000000000      0x2e6 obj/default/hello_world_small.o
+                                        0x33f (size before relaxing)
+ .debug_str     0x00000000000002e6      0x16d c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
                                         0x1b8 (size before relaxing)
- .debug_str     0x00000000000002bb      0x157 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
+ .debug_str     0x0000000000000453       0xaf ../smart_car_bsp/\libhal_bsp.a(alt_getchar.o)
+                                        0x23f (size before relaxing)
+ .debug_str     0x0000000000000502      0x113 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
                                         0x243 (size before relaxing)
- .debug_str     0x0000000000000412       0x8f ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
+ .debug_str     0x0000000000000615       0x5e ../smart_car_bsp/\libhal_bsp.a(alt_main.o)
                                         0x1d3 (size before relaxing)
- .debug_str     0x00000000000004a1       0x59 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_str     0x0000000000000673       0x59 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
                                         0x10d (size before relaxing)
- .debug_str     0x00000000000004fa       0x60 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_str     0x00000000000006cc       0x34 ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
                                         0x194 (size before relaxing)
- .debug_str     0x000000000000055a      0x16e ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_str     0x0000000000000700      0x106 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
                                         0x341 (size before relaxing)
- .debug_str     0x00000000000006c8       0x32 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_str     0x0000000000000806       0x38 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+                                        0x235 (size before relaxing)
+ .debug_str     0x000000000000083e       0x32 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
                                         0x22b (size before relaxing)
- .debug_str     0x00000000000006fa       0xb7 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_str     0x0000000000000870       0xb7 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
                                         0x27b (size before relaxing)
- .debug_str     0x00000000000007b1      0x18f ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+ .debug_str     0x0000000000000927       0xe3 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
                                         0x380 (size before relaxing)
- .debug_str     0x0000000000000940       0x1f ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_str     0x0000000000000a0a       0x1f ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
                                         0x15c (size before relaxing)
- .debug_str     0x000000000000095f      0x12c ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
+ .debug_str     0x0000000000000a29      0x120 ../smart_car_bsp/\libhal_bsp.a(alt_dev.o)
                                         0x30c (size before relaxing)
- .debug_str     0x0000000000000a8b       0x4e ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_str     0x0000000000000b49       0x4e ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
                                         0x1d3 (size before relaxing)
- .debug_str     0x0000000000000ad9       0x14 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
+ .debug_str     0x0000000000000b97       0x14 ../smart_car_bsp/\libhal_bsp.a(alt_errno.o)
                                         0x14c (size before relaxing)
- .debug_str     0x0000000000000aed       0x25 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_str     0x0000000000000bab       0x25 ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
                                         0x201 (size before relaxing)
- .debug_str     0x0000000000000b12       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
+ .debug_str     0x0000000000000bd0       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush_all.o)
                                         0x16d (size before relaxing)
- .debug_str     0x0000000000000b42       0x66 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+ .debug_str     0x0000000000000c00       0x66 ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
                                         0x1fd (size before relaxing)
- .debug_str     0x0000000000000ba8       0x17 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
+ .debug_str     0x0000000000000c66       0x17 ../smart_car_bsp/\libhal_bsp.a(alt_irq_vars.o)
                                         0x12f (size before relaxing)
- .debug_str     0x0000000000000bbf       0x6f ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+ .debug_str     0x0000000000000c7d       0x6f ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
                                         0x268 (size before relaxing)
- .debug_str     0x0000000000000c2e       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
+ .debug_str     0x0000000000000cec       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_nios2_qsys_irq.o)
                                         0x17a (size before relaxing)
- .debug_str     0x0000000000000c4e       0x1b ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_str     0x0000000000000d0c       0x1b ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
                                         0x162 (size before relaxing)
- .debug_str     0x0000000000000c69       0x3f ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .debug_str     0x0000000000000d27       0x3f ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
                                         0x1ad (size before relaxing)
- .debug_str     0x0000000000000ca8      0x11a c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
+ .debug_str     0x0000000000000d66      0x11a c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-int_errno.o)
                                         0x1be (size before relaxing)
- .debug_str     0x0000000000000dc2       0xcb c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .debug_str     0x0000000000000e80       0xcb c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
                                         0x1c5 (size before relaxing)
- .debug_str     0x0000000000000e8d       0x3a c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .debug_str     0x0000000000000f4b       0x3a c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
                                         0x1cb (size before relaxing)
 
-.debug_loc      0x0000000000000000      0xfb9
+.debug_loc      0x0000000000000000     0x10b7
  *(.debug_loc)
- .debug_loc     0x0000000000000000       0x60 obj/default/hello_world_small.o
- .debug_loc     0x0000000000000060      0x4ce c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
- .debug_loc     0x000000000000052e      0x1de ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
- .debug_loc     0x000000000000070c       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
- .debug_loc     0x0000000000000738       0x21 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_loc     0x0000000000000759       0x8b ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
- .debug_loc     0x00000000000007e4      0x102 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
- .debug_loc     0x00000000000008e6      0x2d3 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
- .debug_loc     0x0000000000000bb9       0x1f ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
- .debug_loc     0x0000000000000bd8       0x7e ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_loc     0x0000000000000c56       0x7e ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
- .debug_loc     0x0000000000000cd4       0xfa ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
- .debug_loc     0x0000000000000dce       0x75 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
- .debug_loc     0x0000000000000e43       0x52 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
- .debug_loc     0x0000000000000e95       0x72 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .debug_loc     0x0000000000000f07       0x94 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .debug_loc     0x0000000000000f9b       0x1e c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .debug_loc     0x0000000000000000       0x91 obj/default/hello_world_small.o
+ .debug_loc     0x0000000000000091      0x4ce c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
+ .debug_loc     0x000000000000055f      0x1de ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
+ .debug_loc     0x000000000000073d       0x2c ../smart_car_bsp/\libhal_bsp.a(alt_putchar.o)
+ .debug_loc     0x0000000000000769       0x21 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
+ .debug_loc     0x000000000000078a       0xcd ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_loc     0x0000000000000857       0x8b ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_write.o)
+ .debug_loc     0x00000000000008e2      0x102 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_loc     0x00000000000009e4      0x2d3 ../smart_car_bsp/\libhal_bsp.a(altera_up_avalon_rs232.o)
+ .debug_loc     0x0000000000000cb7       0x1f ../smart_car_bsp/\libhal_bsp.a(alt_dcache_flush_all.o)
+ .debug_loc     0x0000000000000cd6       0x7e ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_loc     0x0000000000000d54       0x7e ../smart_car_bsp/\libhal_bsp.a(alt_find_dev.o)
+ .debug_loc     0x0000000000000dd2       0xfa ../smart_car_bsp/\libhal_bsp.a(alt_irq_register.o)
+ .debug_loc     0x0000000000000ecc       0x75 ../smart_car_bsp/\libhal_bsp.a(alt_tick.o)
+ .debug_loc     0x0000000000000f41       0x52 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_loc     0x0000000000000f93       0x72 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .debug_loc     0x0000000000001005       0x94 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .debug_loc     0x0000000000001099       0x1e c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
 
 .debug_macinfo
  *(.debug_macinfo)
@@ -786,18 +817,19 @@ LOAD c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nio
                 [!provide]                        PROVIDE (__alt_heap_limit, 0xffff800)
 OUTPUT(smart_car.elf elf32-littlenios2)
 
-.debug_ranges   0x0000000000000000      0x1e0
+.debug_ranges   0x0000000000000000      0x200
  .debug_ranges  0x0000000000000000       0x20 ../smart_car_bsp//obj/HAL/src/crt0.o
  .debug_ranges  0x0000000000000020       0x18 obj/default/hello_world_small.o
  .debug_ranges  0x0000000000000038       0x60 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0\libgcc.a(lib2-divmod.o)
  .debug_ranges  0x0000000000000098       0x48 ../smart_car_bsp/\libhal_bsp.a(alt_load.o)
  .debug_ranges  0x00000000000000e0       0x18 ../smart_car_bsp/\libhal_bsp.a(alt_printf.o)
  .debug_ranges  0x00000000000000f8       0x18 ../smart_car_bsp/\libhal_bsp.a(alt_sys_init.o)
- .debug_ranges  0x0000000000000110       0x18 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
- .debug_ranges  0x0000000000000128       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
- .debug_ranges  0x0000000000000148       0x10 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
- .debug_ranges  0x0000000000000158       0x28 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
- .debug_ranges  0x0000000000000180       0x10 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
- .debug_ranges  0x0000000000000190       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
- .debug_ranges  0x00000000000001c0       0x10 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
- .debug_ranges  0x00000000000001d0       0x10 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
+ .debug_ranges  0x0000000000000110       0x20 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_jtag_uart_read.o)
+ .debug_ranges  0x0000000000000130       0x18 ../smart_car_bsp/\libhal_bsp.a(altera_avalon_timer_sc.o)
+ .debug_ranges  0x0000000000000148       0x20 ../smart_car_bsp/\libhal_bsp.a(alt_dev_llist_insert.o)
+ .debug_ranges  0x0000000000000168       0x10 ../smart_car_bsp/\libhal_bsp.a(alt_icache_flush.o)
+ .debug_ranges  0x0000000000000178       0x28 ../smart_car_bsp/\libhal_bsp.a(alt_irq_entry.o)
+ .debug_ranges  0x00000000000001a0       0x10 ../smart_car_bsp/\libhal_bsp.a(alt_irq_handler.o)
+ .debug_ranges  0x00000000000001b0       0x30 ../smart_car_bsp/\libhal_bsp.a(alt_exception_entry.o)
+ .debug_ranges  0x00000000000001e0       0x10 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-memcmp.o)
+ .debug_ranges  0x00000000000001f0       0x10 c:/intelfpga_lite/17.1/nios2eds/bin/gnu/h-x86_64-mingw32/bin/../lib/gcc/nios2-elf/5.3.0/../../../../../H-x86_64-mingw32/nios2-elf/lib\libsmallc.a(lib_a-strlen.o)
