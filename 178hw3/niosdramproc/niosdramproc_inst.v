@@ -14,6 +14,7 @@
 		.mot_1_export      (<connected-to-mot_1_export>),      //      mot_1.export
 		.pushbutton_export (<connected-to-pushbutton_export>), // pushbutton.export
 		.reset_reset       (<connected-to-reset_reset>),       //      reset.reset
+		.sdram_clk_clk     (<connected-to-sdram_clk_clk>),     //  sdram_clk.clk
 		.sdram_wire_addr   (<connected-to-sdram_wire_addr>),   // sdram_wire.addr
 		.sdram_wire_ba     (<connected-to-sdram_wire_ba>),     //           .ba
 		.sdram_wire_cas_n  (<connected-to-sdram_wire_cas_n>),  //           .cas_n
@@ -26,6 +27,8 @@
 		.switches_export   (<connected-to-switches_export>),   //   switches.export
 		.uart_RXD          (<connected-to-uart_RXD>),          //       uart.RXD
 		.uart_TXD          (<connected-to-uart_TXD>),          //           .TXD
-		.sdram_clk_clk     (<connected-to-sdram_clk_clk>)      //  sdram_clk.clk
+		.hctrig_export     (<connected-to-hctrig_export>),     //     hctrig.export
+		.hcecho_export     (<connected-to-hcecho_export>),     //     hcecho.export
+		.buzzer_export     (<connected-to-buzzer_export>)      //     buzzer.export
 	);
 

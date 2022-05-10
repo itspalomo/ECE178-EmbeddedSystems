@@ -4,7 +4,7 @@
  * Machine generated for CPU 'joseproc3' in SOPC Builder design 'niosdramproc'
  * SOPC Builder design path: ../../niosdramproc.sopcinfo
  *
- * Generated: Sun May 08 14:27:39 PDT 2022
+ * Generated: Tue May 10 01:36:29 PDT 2022
  */
 
 /*
@@ -143,7 +143,7 @@
  */
 
 #define ALT_MODULE_CLASS_Hex_0 altera_avalon_pio
-#define HEX_0_BASE 0x2050
+#define HEX_0_BASE 0x2080
 #define HEX_0_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_0_CAPTURE 0
@@ -170,7 +170,7 @@
  */
 
 #define ALT_MODULE_CLASS_Hex_1 altera_avalon_pio
-#define HEX_1_BASE 0x2080
+#define HEX_1_BASE 0x20b0
 #define HEX_1_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_1_CAPTURE 0
@@ -197,7 +197,7 @@
  */
 
 #define ALT_MODULE_CLASS_Hex_2 altera_avalon_pio
-#define HEX_2_BASE 0x2070
+#define HEX_2_BASE 0x20a0
 #define HEX_2_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_2_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_2_CAPTURE 0
@@ -224,7 +224,7 @@
  */
 
 #define ALT_MODULE_CLASS_Hex_3 altera_avalon_pio
-#define HEX_3_BASE 0x2060
+#define HEX_3_BASE 0x2090
 #define HEX_3_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_3_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_3_CAPTURE 0
@@ -251,7 +251,7 @@
  */
 
 #define ALT_MODULE_CLASS_Hex_4 altera_avalon_pio
-#define HEX_4_BASE 0x20c0
+#define HEX_4_BASE 0x20f0
 #define HEX_4_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_4_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_4_CAPTURE 0
@@ -278,7 +278,7 @@
  */
 
 #define ALT_MODULE_CLASS_Hex_5 altera_avalon_pio
-#define HEX_5_BASE 0x20b0
+#define HEX_5_BASE 0x20e0
 #define HEX_5_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_5_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_5_CAPTURE 0
@@ -305,7 +305,7 @@
  */
 
 #define ALT_MODULE_CLASS_Hex_6 altera_avalon_pio
-#define HEX_6_BASE 0x20a0
+#define HEX_6_BASE 0x20d0
 #define HEX_6_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_6_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_6_CAPTURE 0
@@ -332,7 +332,7 @@
  */
 
 #define ALT_MODULE_CLASS_Hex_7 altera_avalon_pio
-#define HEX_7_BASE 0x2090
+#define HEX_7_BASE 0x20c0
 #define HEX_7_BIT_CLEARING_EDGE_REGISTER 0
 #define HEX_7_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define HEX_7_CAPTURE 0
@@ -359,7 +359,7 @@
  */
 
 #define ALT_MODULE_CLASS_LEDG altera_avalon_pio
-#define LEDG_BASE 0x20f0
+#define LEDG_BASE 0x2120
 #define LEDG_BIT_CLEARING_EDGE_REGISTER 0
 #define LEDG_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LEDG_CAPTURE 0
@@ -386,7 +386,7 @@
  */
 
 #define ALT_MODULE_CLASS_LEDR altera_avalon_pio
-#define LEDR_BASE 0x2040
+#define LEDR_BASE 0x2070
 #define LEDR_BIT_CLEARING_EDGE_REGISTER 0
 #define LEDR_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LEDR_CAPTURE 0
@@ -413,7 +413,7 @@
  */
 
 #define ALT_MODULE_CLASS_Push_buttons altera_avalon_pio
-#define PUSH_BUTTONS_BASE 0x20d0
+#define PUSH_BUTTONS_BASE 0x2100
 #define PUSH_BUTTONS_BIT_CLEARING_EDGE_REGISTER 0
 #define PUSH_BUTTONS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define PUSH_BUTTONS_CAPTURE 1
@@ -440,13 +440,13 @@
  */
 
 #define ALT_MODULE_CLASS_SYSID altera_avalon_sysid_qsys
-#define SYSID_BASE 0x2100
+#define SYSID_BASE 0x2130
 #define SYSID_ID 0
 #define SYSID_IRQ -1
 #define SYSID_IRQ_INTERRUPT_CONTROLLER_ID -1
 #define SYSID_NAME "/dev/SYSID"
 #define SYSID_SPAN 8
-#define SYSID_TIMESTAMP 1651888719
+#define SYSID_TIMESTAMP 1652171542
 #define SYSID_TYPE "altera_avalon_sysid_qsys"
 
 
@@ -466,24 +466,51 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/jtag_uart_0"
-#define ALT_STDERR_BASE 0x2110
+#define ALT_STDERR_BASE 0x2140
 #define ALT_STDERR_DEV jtag_uart_0
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/jtag_uart_0"
-#define ALT_STDIN_BASE 0x2110
+#define ALT_STDIN_BASE 0x2140
 #define ALT_STDIN_DEV jtag_uart_0
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/jtag_uart_0"
-#define ALT_STDOUT_BASE 0x2110
+#define ALT_STDOUT_BASE 0x2140
 #define ALT_STDOUT_DEV jtag_uart_0
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT
 #define ALT_STDOUT_TYPE "altera_avalon_jtag_uart"
 #define ALT_SYSTEM_NAME "niosdramproc"
+
+
+/*
+ * buzzer configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_buzzer altera_avalon_pio
+#define BUZZER_BASE 0x2020
+#define BUZZER_BIT_CLEARING_EDGE_REGISTER 0
+#define BUZZER_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define BUZZER_CAPTURE 0
+#define BUZZER_DATA_WIDTH 1
+#define BUZZER_DO_TEST_BENCH_WIRING 0
+#define BUZZER_DRIVEN_SIM_VALUE 0
+#define BUZZER_EDGE_TYPE "NONE"
+#define BUZZER_FREQ 50000000
+#define BUZZER_HAS_IN 0
+#define BUZZER_HAS_OUT 1
+#define BUZZER_HAS_TRI 0
+#define BUZZER_IRQ -1
+#define BUZZER_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define BUZZER_IRQ_TYPE "NONE"
+#define BUZZER_NAME "/dev/buzzer"
+#define BUZZER_RESET_VALUE 0
+#define BUZZER_SPAN 16
+#define BUZZER_TYPE "altera_avalon_pio"
 
 
 /*
@@ -497,12 +524,66 @@
 
 
 /*
+ * hcecho configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_hcecho altera_avalon_pio
+#define HCECHO_BASE 0x2030
+#define HCECHO_BIT_CLEARING_EDGE_REGISTER 0
+#define HCECHO_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define HCECHO_CAPTURE 0
+#define HCECHO_DATA_WIDTH 1
+#define HCECHO_DO_TEST_BENCH_WIRING 0
+#define HCECHO_DRIVEN_SIM_VALUE 0
+#define HCECHO_EDGE_TYPE "NONE"
+#define HCECHO_FREQ 50000000
+#define HCECHO_HAS_IN 1
+#define HCECHO_HAS_OUT 0
+#define HCECHO_HAS_TRI 0
+#define HCECHO_IRQ -1
+#define HCECHO_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define HCECHO_IRQ_TYPE "NONE"
+#define HCECHO_NAME "/dev/hcecho"
+#define HCECHO_RESET_VALUE 0
+#define HCECHO_SPAN 16
+#define HCECHO_TYPE "altera_avalon_pio"
+
+
+/*
+ * hctrig configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_hctrig altera_avalon_pio
+#define HCTRIG_BASE 0x2040
+#define HCTRIG_BIT_CLEARING_EDGE_REGISTER 0
+#define HCTRIG_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define HCTRIG_CAPTURE 0
+#define HCTRIG_DATA_WIDTH 1
+#define HCTRIG_DO_TEST_BENCH_WIRING 0
+#define HCTRIG_DRIVEN_SIM_VALUE 0
+#define HCTRIG_EDGE_TYPE "NONE"
+#define HCTRIG_FREQ 50000000
+#define HCTRIG_HAS_IN 0
+#define HCTRIG_HAS_OUT 1
+#define HCTRIG_HAS_TRI 0
+#define HCTRIG_IRQ -1
+#define HCTRIG_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define HCTRIG_IRQ_TYPE "NONE"
+#define HCTRIG_NAME "/dev/hctrig"
+#define HCTRIG_RESET_VALUE 0
+#define HCTRIG_SPAN 16
+#define HCTRIG_TYPE "altera_avalon_pio"
+
+
+/*
  * jtag_uart_0 configuration
  *
  */
 
 #define ALT_MODULE_CLASS_jtag_uart_0 altera_avalon_jtag_uart
-#define JTAG_UART_0_BASE 0x2110
+#define JTAG_UART_0_BASE 0x2140
 #define JTAG_UART_0_IRQ 5
 #define JTAG_UART_0_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_UART_0_NAME "/dev/jtag_uart_0"
@@ -520,7 +601,7 @@
  */
 
 #define ALT_MODULE_CLASS_mot_0 altera_avalon_pio
-#define MOT_0_BASE 0x2030
+#define MOT_0_BASE 0x2060
 #define MOT_0_BIT_CLEARING_EDGE_REGISTER 0
 #define MOT_0_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MOT_0_CAPTURE 0
@@ -547,7 +628,7 @@
  */
 
 #define ALT_MODULE_CLASS_mot_1 altera_avalon_pio
-#define MOT_1_BASE 0x2020
+#define MOT_1_BASE 0x2050
 #define MOT_1_BIT_CLEARING_EDGE_REGISTER 0
 #define MOT_1_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define MOT_1_CAPTURE 0
@@ -642,7 +723,7 @@
  */
 
 #define ALT_MODULE_CLASS_switches altera_avalon_pio
-#define SWITCHES_BASE 0x20e0
+#define SWITCHES_BASE 0x2110
 #define SWITCHES_BIT_CLEARING_EDGE_REGISTER 0
 #define SWITCHES_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define SWITCHES_CAPTURE 0
@@ -695,7 +776,7 @@
  */
 
 #define ALT_MODULE_CLASS_uart altera_up_avalon_rs232
-#define UART_BASE 0x2108
+#define UART_BASE 0x2138
 #define UART_IRQ 2
 #define UART_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define UART_NAME "/dev/uart"

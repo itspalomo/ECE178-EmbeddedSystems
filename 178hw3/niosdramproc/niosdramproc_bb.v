@@ -15,6 +15,7 @@ module niosdramproc (
 	mot_1_export,
 	pushbutton_export,
 	reset_reset,
+	sdram_clk_clk,
 	sdram_wire_addr,
 	sdram_wire_ba,
 	sdram_wire_cas_n,
@@ -27,7 +28,9 @@ module niosdramproc (
 	switches_export,
 	uart_RXD,
 	uart_TXD,
-	sdram_clk_clk);	
+	hctrig_export,
+	hcecho_export,
+	buzzer_export);	
 
 	input		clk_clk;
 	output	[6:0]	hex0_export;
@@ -44,6 +47,7 @@ module niosdramproc (
 	output	[3:0]	mot_1_export;
 	input	[3:0]	pushbutton_export;
 	input		reset_reset;
+	output		sdram_clk_clk;
 	output	[12:0]	sdram_wire_addr;
 	output	[1:0]	sdram_wire_ba;
 	output		sdram_wire_cas_n;
@@ -56,5 +60,7 @@ module niosdramproc (
 	input	[17:0]	switches_export;
 	input		uart_RXD;
 	output		uart_TXD;
-	output		sdram_clk_clk;
+	output		hctrig_export;
+	input		hcecho_export;
+	output		buzzer_export;
 endmodule

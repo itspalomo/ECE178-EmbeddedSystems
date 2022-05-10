@@ -1,6 +1,9 @@
 	component niosdramproc is
 		port (
+			buzzer_export     : out   std_logic;                                        -- export
 			clk_clk           : in    std_logic                     := 'X';             -- clk
+			hcecho_export     : in    std_logic                     := 'X';             -- export
+			hctrig_export     : out   std_logic;                                        -- export
 			hex0_export       : out   std_logic_vector(6 downto 0);                     -- export
 			hex1_export       : out   std_logic_vector(6 downto 0);                     -- export
 			hex2_export       : out   std_logic_vector(6 downto 0);                     -- export

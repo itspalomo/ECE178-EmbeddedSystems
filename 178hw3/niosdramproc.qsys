@@ -21,7 +21,7 @@
    {
       datum baseAddress
       {
-         value = "8272";
+         value = "8320";
          type = "String";
       }
    }
@@ -37,7 +37,7 @@
    {
       datum baseAddress
       {
-         value = "8320";
+         value = "8368";
          type = "String";
       }
    }
@@ -53,7 +53,7 @@
    {
       datum baseAddress
       {
-         value = "8304";
+         value = "8352";
          type = "String";
       }
    }
@@ -69,7 +69,7 @@
    {
       datum baseAddress
       {
-         value = "8288";
+         value = "8336";
          type = "String";
       }
    }
@@ -85,7 +85,7 @@
    {
       datum baseAddress
       {
-         value = "8384";
+         value = "8432";
          type = "String";
       }
    }
@@ -106,7 +106,7 @@
    {
       datum baseAddress
       {
-         value = "8368";
+         value = "8416";
          type = "String";
       }
    }
@@ -122,7 +122,7 @@
    {
       datum baseAddress
       {
-         value = "8352";
+         value = "8400";
          type = "String";
       }
    }
@@ -138,7 +138,7 @@
    {
       datum baseAddress
       {
-         value = "8336";
+         value = "8384";
          type = "String";
       }
    }
@@ -159,7 +159,7 @@
       }
       datum baseAddress
       {
-         value = "8432";
+         value = "8480";
          type = "String";
       }
    }
@@ -175,7 +175,7 @@
    {
       datum baseAddress
       {
-         value = "8256";
+         value = "8304";
          type = "String";
       }
    }
@@ -191,7 +191,7 @@
    {
       datum baseAddress
       {
-         value = "8400";
+         value = "8448";
          type = "String";
       }
    }
@@ -207,7 +207,23 @@
    {
       datum baseAddress
       {
-         value = "8448";
+         value = "8496";
+         type = "String";
+      }
+   }
+   element buzzer
+   {
+      datum _sortIndex
+      {
+         value = "24";
+         type = "int";
+      }
+   }
+   element buzzer.s1
+   {
+      datum baseAddress
+      {
+         value = "8224";
          type = "String";
       }
    }
@@ -217,6 +233,38 @@
       {
          value = "17";
          type = "int";
+      }
+   }
+   element hcecho
+   {
+      datum _sortIndex
+      {
+         value = "23";
+         type = "int";
+      }
+   }
+   element hcecho.s1
+   {
+      datum baseAddress
+      {
+         value = "8240";
+         type = "String";
+      }
+   }
+   element hctrig
+   {
+      datum _sortIndex
+      {
+         value = "22";
+         type = "int";
+      }
+   }
+   element hctrig.s1
+   {
+      datum baseAddress
+      {
+         value = "8256";
+         type = "String";
       }
    }
    element joseproc3
@@ -257,7 +305,7 @@
       }
       datum baseAddress
       {
-         value = "8464";
+         value = "8512";
          type = "String";
       }
    }
@@ -273,7 +321,7 @@
    {
       datum baseAddress
       {
-         value = "8240";
+         value = "8288";
          type = "String";
       }
    }
@@ -289,7 +337,7 @@
    {
       datum baseAddress
       {
-         value = "8224";
+         value = "8272";
          type = "String";
       }
    }
@@ -355,7 +403,7 @@
       }
       datum baseAddress
       {
-         value = "8416";
+         value = "8464";
          type = "String";
       }
    }
@@ -387,7 +435,7 @@
    {
       datum baseAddress
       {
-         value = "8456";
+         value = "8504";
          type = "String";
       }
    }
@@ -412,7 +460,22 @@
  <parameter name="timeStamp" value="0" />
  <parameter name="useTestBenchNamingPattern" value="false" />
  <instanceScript></instanceScript>
+ <interface
+   name="buzzer"
+   internal="buzzer.external_connection"
+   type="conduit"
+   dir="end" />
  <interface name="clk" internal="clocks.ref_clk" type="clock" dir="end" />
+ <interface
+   name="hcecho"
+   internal="hcecho.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="hctrig"
+   internal="hctrig.external_connection"
+   type="conduit"
+   dir="end" />
  <interface
    name="hex0"
    internal="Hex_0.external_connection"
@@ -656,6 +719,20 @@
    enabled="1">
   <parameter name="id" value="0" />
  </module>
+ <module name="buzzer" kind="altera_avalon_pio" version="17.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
  <module
    name="clocks"
    kind="altera_up_avalon_sys_sdram_pll"
@@ -672,6 +749,34 @@
   <parameter name="gui_refclk" value="50.0" />
   <parameter name="other_boards" value="None" />
  </module>
+ <module name="hcecho" kind="altera_avalon_pio" version="17.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Input" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
+ <module name="hctrig" kind="altera_avalon_pio" version="17.1" enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="1" />
+ </module>
  <module name="joseproc3" kind="altera_nios2_qsys" version="16.1" enabled="1">
   <parameter name="bht_ramBlockType" value="Automatic" />
   <parameter name="breakOffset" value="32" />
@@ -682,7 +787,7 @@
   <parameter name="cpuReset" value="false" />
   <parameter name="customInstSlavesSystemInfo" value="&lt;info/&gt;" />
   <parameter name="dataAddrWidth" value="28" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' /><slave name='joseproc3.jtag_debug_module' start='0x1800' end='0x2000' /><slave name='sys_clock_timer.s1' start='0x2000' end='0x2020' /><slave name='mot_1.s1' start='0x2020' end='0x2030' /><slave name='mot_0.s1' start='0x2030' end='0x2040' /><slave name='LEDR.s1' start='0x2040' end='0x2050' /><slave name='Hex_0.s1' start='0x2050' end='0x2060' /><slave name='Hex_3.s1' start='0x2060' end='0x2070' /><slave name='Hex_2.s1' start='0x2070' end='0x2080' /><slave name='Hex_1.s1' start='0x2080' end='0x2090' /><slave name='Hex_7.s1' start='0x2090' end='0x20A0' /><slave name='Hex_6.s1' start='0x20A0' end='0x20B0' /><slave name='Hex_5.s1' start='0x20B0' end='0x20C0' /><slave name='Hex_4.s1' start='0x20C0' end='0x20D0' /><slave name='Push_buttons.s1' start='0x20D0' end='0x20E0' /><slave name='switches.s1' start='0x20E0' end='0x20F0' /><slave name='LEDG.s1' start='0x20F0' end='0x2100' /><slave name='SYSID.control_slave' start='0x2100' end='0x2108' /><slave name='uart.avalon_rs232_slave' start='0x2108' end='0x2110' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2110' end='0x2118' /><slave name='sdram.s1' start='0x8000000' end='0x10000000' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='onchip_memory2_0.s1' start='0x0' end='0x1000' /><slave name='joseproc3.jtag_debug_module' start='0x1800' end='0x2000' /><slave name='sys_clock_timer.s1' start='0x2000' end='0x2020' /><slave name='buzzer.s1' start='0x2020' end='0x2030' /><slave name='hcecho.s1' start='0x2030' end='0x2040' /><slave name='hctrig.s1' start='0x2040' end='0x2050' /><slave name='mot_1.s1' start='0x2050' end='0x2060' /><slave name='mot_0.s1' start='0x2060' end='0x2070' /><slave name='LEDR.s1' start='0x2070' end='0x2080' /><slave name='Hex_0.s1' start='0x2080' end='0x2090' /><slave name='Hex_3.s1' start='0x2090' end='0x20A0' /><slave name='Hex_2.s1' start='0x20A0' end='0x20B0' /><slave name='Hex_1.s1' start='0x20B0' end='0x20C0' /><slave name='Hex_7.s1' start='0x20C0' end='0x20D0' /><slave name='Hex_6.s1' start='0x20D0' end='0x20E0' /><slave name='Hex_5.s1' start='0x20E0' end='0x20F0' /><slave name='Hex_4.s1' start='0x20F0' end='0x2100' /><slave name='Push_buttons.s1' start='0x2100' end='0x2110' /><slave name='switches.s1' start='0x2110' end='0x2120' /><slave name='LEDG.s1' start='0x2120' end='0x2130' /><slave name='SYSID.control_slave' start='0x2130' end='0x2138' /><slave name='uart.avalon_rs232_slave' start='0x2138' end='0x2140' /><slave name='jtag_uart_0.avalon_jtag_slave' start='0x2140' end='0x2148' /><slave name='sdram.s1' start='0x8000000' end='0x10000000' /></address-map>]]></parameter>
   <parameter name="dcache_bursts" value="false" />
   <parameter name="dcache_lineSize" value="32" />
   <parameter name="dcache_numTCDM" value="0" />
@@ -952,7 +1057,7 @@
    start="joseproc3.data_master"
    end="jtag_uart_0.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2110" />
+  <parameter name="baseAddress" value="0x2140" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -961,7 +1066,7 @@
    start="joseproc3.data_master"
    end="uart.avalon_rs232_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2108" />
+  <parameter name="baseAddress" value="0x2138" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -970,7 +1075,7 @@
    start="joseproc3.data_master"
    end="SYSID.control_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2100" />
+  <parameter name="baseAddress" value="0x2130" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -988,7 +1093,7 @@
    start="joseproc3.data_master"
    end="LEDG.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20f0" />
+  <parameter name="baseAddress" value="0x2120" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -997,7 +1102,7 @@
    start="joseproc3.data_master"
    end="switches.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20e0" />
+  <parameter name="baseAddress" value="0x2110" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1033,7 +1138,7 @@
    start="joseproc3.data_master"
    end="Push_buttons.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20d0" />
+  <parameter name="baseAddress" value="0x2100" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1042,7 +1147,7 @@
    start="joseproc3.data_master"
    end="Hex_4.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20c0" />
+  <parameter name="baseAddress" value="0x20f0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1051,7 +1156,7 @@
    start="joseproc3.data_master"
    end="Hex_5.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20b0" />
+  <parameter name="baseAddress" value="0x20e0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1060,7 +1165,7 @@
    start="joseproc3.data_master"
    end="Hex_6.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x20a0" />
+  <parameter name="baseAddress" value="0x20d0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1069,7 +1174,7 @@
    start="joseproc3.data_master"
    end="Hex_7.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2090" />
+  <parameter name="baseAddress" value="0x20c0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1078,7 +1183,7 @@
    start="joseproc3.data_master"
    end="Hex_1.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2080" />
+  <parameter name="baseAddress" value="0x20b0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1087,7 +1192,7 @@
    start="joseproc3.data_master"
    end="Hex_2.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2070" />
+  <parameter name="baseAddress" value="0x20a0" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1096,7 +1201,7 @@
    start="joseproc3.data_master"
    end="Hex_3.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2060" />
+  <parameter name="baseAddress" value="0x2090" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1105,7 +1210,7 @@
    start="joseproc3.data_master"
    end="Hex_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2050" />
+  <parameter name="baseAddress" value="0x2080" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1114,7 +1219,7 @@
    start="joseproc3.data_master"
    end="LEDR.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2040" />
+  <parameter name="baseAddress" value="0x2070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1123,7 +1228,7 @@
    start="joseproc3.data_master"
    end="mot_0.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x2030" />
+  <parameter name="baseAddress" value="0x2060" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -1131,6 +1236,33 @@
    version="17.1"
    start="joseproc3.data_master"
    end="mot_1.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2050" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="joseproc3.data_master"
+   end="hctrig.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="joseproc3.data_master"
+   end="hcecho.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x2030" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="17.1"
+   start="joseproc3.data_master"
+   end="buzzer.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x2020" />
   <parameter name="defaultConnection" value="false" />
@@ -1198,6 +1330,9 @@
  <connection kind="clock" version="17.1" start="clocks.sys_clk" end="mot_0.clk" />
  <connection kind="clock" version="17.1" start="clocks.sys_clk" end="mot_1.clk" />
  <connection kind="clock" version="17.1" start="clocks.sys_clk" end="uart.clk" />
+ <connection kind="clock" version="17.1" start="clocks.sys_clk" end="hctrig.clk" />
+ <connection kind="clock" version="17.1" start="clocks.sys_clk" end="hcecho.clk" />
+ <connection kind="clock" version="17.1" start="clocks.sys_clk" end="buzzer.clk" />
  <connection
    kind="clock"
    version="17.1"
@@ -1325,6 +1460,21 @@
    kind="reset"
    version="17.1"
    start="joseproc3.jtag_debug_module_reset"
+   end="hctrig.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="joseproc3.jtag_debug_module_reset"
+   end="hcecho.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="joseproc3.jtag_debug_module_reset"
+   end="buzzer.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="joseproc3.jtag_debug_module_reset"
    end="onchip_memory2_0.reset1" />
  <connection
    kind="reset"
@@ -1426,6 +1576,21 @@
    version="17.1"
    start="clocks.reset_source"
    end="uart.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clocks.reset_source"
+   end="hctrig.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clocks.reset_source"
+   end="hcecho.reset" />
+ <connection
+   kind="reset"
+   version="17.1"
+   start="clocks.reset_source"
+   end="buzzer.reset" />
  <connection
    kind="reset"
    version="17.1"

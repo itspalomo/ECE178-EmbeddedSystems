@@ -15,6 +15,7 @@
 			mot_1_export      : out   std_logic_vector(3 downto 0);                     -- export
 			pushbutton_export : in    std_logic_vector(3 downto 0)  := (others => 'X'); -- export
 			reset_reset       : in    std_logic                     := 'X';             -- reset
+			sdram_clk_clk     : out   std_logic;                                        -- clk
 			sdram_wire_addr   : out   std_logic_vector(12 downto 0);                    -- addr
 			sdram_wire_ba     : out   std_logic_vector(1 downto 0);                     -- ba
 			sdram_wire_cas_n  : out   std_logic;                                        -- cas_n
@@ -27,7 +28,9 @@
 			switches_export   : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
 			uart_RXD          : in    std_logic                     := 'X';             -- RXD
 			uart_TXD          : out   std_logic;                                        -- TXD
-			sdram_clk_clk     : out   std_logic                                         -- clk
+			hctrig_export     : out   std_logic;                                        -- export
+			hcecho_export     : in    std_logic                     := 'X';             -- export
+			buzzer_export     : out   std_logic                                         -- export
 		);
 	end component niosdramproc;
 
@@ -48,6 +51,7 @@
 			mot_1_export      => CONNECTED_TO_mot_1_export,      --      mot_1.export
 			pushbutton_export => CONNECTED_TO_pushbutton_export, -- pushbutton.export
 			reset_reset       => CONNECTED_TO_reset_reset,       --      reset.reset
+			sdram_clk_clk     => CONNECTED_TO_sdram_clk_clk,     --  sdram_clk.clk
 			sdram_wire_addr   => CONNECTED_TO_sdram_wire_addr,   -- sdram_wire.addr
 			sdram_wire_ba     => CONNECTED_TO_sdram_wire_ba,     --           .ba
 			sdram_wire_cas_n  => CONNECTED_TO_sdram_wire_cas_n,  --           .cas_n
@@ -60,6 +64,8 @@
 			switches_export   => CONNECTED_TO_switches_export,   --   switches.export
 			uart_RXD          => CONNECTED_TO_uart_RXD,          --       uart.RXD
 			uart_TXD          => CONNECTED_TO_uart_TXD,          --           .TXD
-			sdram_clk_clk     => CONNECTED_TO_sdram_clk_clk      --  sdram_clk.clk
+			hctrig_export     => CONNECTED_TO_hctrig_export,     --     hctrig.export
+			hcecho_export     => CONNECTED_TO_hcecho_export,     --     hcecho.export
+			buzzer_export     => CONNECTED_TO_buzzer_export      --     buzzer.export
 		);
 

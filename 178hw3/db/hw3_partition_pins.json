@@ -588,6 +588,18 @@
 					"strict" : false
 				},
 				{
+					"name" : "GPIO[12]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO[13]",
+					"strict" : false
+				},
+				{
+					"name" : "GPIO[14]",
+					"strict" : false
+				},
+				{
 					"name" : "KEY[1]",
 					"strict" : false
 				},
@@ -605,10 +617,6 @@
 				},
 				{
 					"name" : "SW[0]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[16]",
 					"strict" : false
 				},
 				{
@@ -669,10 +677,6 @@
 				},
 				{
 					"name" : "SW[1]",
-					"strict" : false
-				},
-				{
-					"name" : "SW[17]",
 					"strict" : false
 				},
 				{

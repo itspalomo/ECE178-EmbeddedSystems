@@ -3,7 +3,7 @@
 module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 				HEX4, HEX5, HEX6, HEX7, LEDG, LEDR, DRAM_CLK, DRAM_CKE,
 				DRAM_ADDR, DRAM_BA, DRAM_CS_N, DRAM_CAS_N, DRAM_RAS_N,
-				DRAM_WE_N, DRAM_DQ, DRAM_DQM, GPIO, UART_RXD, UART_TXD);
+				DRAM_WE_N, DRAM_DQ, DRAM_DQM, GPIO, UART_RXD, UART_TXD, HCdata);
 				
 		input  wire        CLOCK_50;         //      clk.clk
 		output wire [6:0]  HEX0, HEX1, HEX2, HEX3, HEX4, HEX5, HEX6, HEX7;
@@ -20,6 +20,8 @@ module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 		inout [39:0] GPIO;
 		input UART_RXD;
 		output UART_TXD;
+		output [15:0] HCdata;
+
 
 		
 		niosdramproc u0 (
@@ -35,7 +37,7 @@ module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 		.ledg_export     (LEDG),     //     ledg.export
 		.ledr_export     (LEDR),     //     ledr.export
 		.reset_reset   (SW[17]),   //    reset.reset_n
-		.switches_export (SW),  // switches.export
+		.switches_export (SW[15:0]),  // switches.export
 		.pushbutton_export (KEY), // pushbuttons exports
 		.sdram_wire_addr   (DRAM_ADDR),   // sdram_wire.addr
 		.sdram_wire_ba     (DRAM_BA),     //           .ba
@@ -50,7 +52,11 @@ module hw3(SW, KEY, CLOCK_50, HEX0, HEX1, HEX2, HEX3,
 		.uart_RXD          (UART_RXD),          //       uart.RXD
 		.uart_TXD          (UART_TXD),          //           .TXD
 		.mot_1_export      (GPIO[3:0]),      //      mot_1.export
-		.mot_0_export      (GPIO[7:4])       //      mot_0.export
+		.mot_0_export      (GPIO[7:4]),       //      mot_0.export
+		.hctrig_export     (GPIO[13]),     //     hctrig.export
+		.hcecho_export     (GPIO[12]),     //     hcecho.export
+		.buzzer_export     (GPIO[14])      //     buzzer.export
 	);
+	
 
 endmodule 

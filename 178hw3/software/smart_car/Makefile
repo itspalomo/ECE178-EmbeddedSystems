@@ -142,7 +142,7 @@ ACDS_VERSION := 17.1
 ELF := smart_car.elf
 
 # Paths to C, C++, and assembly source files.
-C_SRCS := hello_world_small.c
+C_SRCS := smartcar.c
 CXX_SRCS :=
 ASM_SRCS :=
 

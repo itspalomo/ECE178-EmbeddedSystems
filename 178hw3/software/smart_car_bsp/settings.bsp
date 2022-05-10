@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>May 8, 2022 2:27:39 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1652045259541</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>May 10, 2022 1:37:27 AM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1652171847465</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>D:\Spring_2022\ECE178-EmbeddedSystems\178hw3\software\smart_car_bsp</BspGeneratedLocation>
         <BspSettingsFile>settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\niosdramproc.sopcinfo</SopcDesignFile>
@@ -911,104 +911,122 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>mot_1</slaveDescriptor>
+                <slaveDescriptor>buzzer</slaveDescriptor>
                 <addressRange>0x00002020 - 0x0000202F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>mot_0</slaveDescriptor>
+                <slaveDescriptor>hcecho</slaveDescriptor>
                 <addressRange>0x00002030 - 0x0000203F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LEDR</slaveDescriptor>
+                <slaveDescriptor>hctrig</slaveDescriptor>
                 <addressRange>0x00002040 - 0x0000204F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Hex_0</slaveDescriptor>
+                <slaveDescriptor>mot_1</slaveDescriptor>
                 <addressRange>0x00002050 - 0x0000205F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Hex_3</slaveDescriptor>
+                <slaveDescriptor>mot_0</slaveDescriptor>
                 <addressRange>0x00002060 - 0x0000206F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Hex_2</slaveDescriptor>
+                <slaveDescriptor>LEDR</slaveDescriptor>
                 <addressRange>0x00002070 - 0x0000207F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Hex_1</slaveDescriptor>
+                <slaveDescriptor>Hex_0</slaveDescriptor>
                 <addressRange>0x00002080 - 0x0000208F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Hex_7</slaveDescriptor>
+                <slaveDescriptor>Hex_3</slaveDescriptor>
                 <addressRange>0x00002090 - 0x0000209F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Hex_6</slaveDescriptor>
+                <slaveDescriptor>Hex_2</slaveDescriptor>
                 <addressRange>0x000020A0 - 0x000020AF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Hex_5</slaveDescriptor>
+                <slaveDescriptor>Hex_1</slaveDescriptor>
                 <addressRange>0x000020B0 - 0x000020BF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Hex_4</slaveDescriptor>
+                <slaveDescriptor>Hex_7</slaveDescriptor>
                 <addressRange>0x000020C0 - 0x000020CF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>Push_buttons</slaveDescriptor>
+                <slaveDescriptor>Hex_6</slaveDescriptor>
                 <addressRange>0x000020D0 - 0x000020DF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>switches</slaveDescriptor>
+                <slaveDescriptor>Hex_5</slaveDescriptor>
                 <addressRange>0x000020E0 - 0x000020EF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LEDG</slaveDescriptor>
+                <slaveDescriptor>Hex_4</slaveDescriptor>
                 <addressRange>0x000020F0 - 0x000020FF</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>Push_buttons</slaveDescriptor>
+                <addressRange>0x00002100 - 0x0000210F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>switches</slaveDescriptor>
+                <addressRange>0x00002110 - 0x0000211F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>LEDG</slaveDescriptor>
+                <addressRange>0x00002120 - 0x0000212F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>SYSID</slaveDescriptor>
-                <addressRange>0x00002100 - 0x00002107</addressRange>
+                <addressRange>0x00002130 - 0x00002137</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>uart</slaveDescriptor>
-                <addressRange>0x00002108 - 0x0000210F</addressRange>
+                <addressRange>0x00002138 - 0x0000213F</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
                 <slaveDescriptor>jtag_uart_0</slaveDescriptor>
-                <addressRange>0x00002110 - 0x00002117</addressRange>
+                <addressRange>0x00002140 - 0x00002147</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>
