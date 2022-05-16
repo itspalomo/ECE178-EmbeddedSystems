@@ -1,12 +1,12 @@
-Analysis & Synthesis Status : Successful - Tue May 10 01:34:30 2022
+Analysis & Synthesis Status : Successful - Sun May 15 18:46:09 2022
 Quartus Prime Version : 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
 Revision Name : hw3
 Top-level Entity Name : hw3
 Family : Cyclone IV E
-Total logic elements : 5,474
-    Total combinational functions : 4,537
-    Dedicated logic registers : 3,216
-Total registers : 3216
+Total logic elements : 5,910
+    Total combinational functions : 4,837
+    Dedicated logic registers : 3,514
+Total registers : 3514
 Total pins : 220
 Total virtual pins : 0
 Total memory bits : 100,288

@@ -1,6 +1,9 @@
 	component niosdramproc is
 		port (
+			buzzer_export     : out   std_logic;                                        -- export
 			clk_clk           : in    std_logic                     := 'X';             -- clk
+			hcecho_export     : in    std_logic                     := 'X';             -- export
+			hctrig_export     : out   std_logic;                                        -- export
 			hex0_export       : out   std_logic_vector(6 downto 0);                     -- export
 			hex1_export       : out   std_logic_vector(6 downto 0);                     -- export
 			hex2_export       : out   std_logic_vector(6 downto 0);                     -- export
@@ -27,16 +30,16 @@
 			sdram_wire_we_n   : out   std_logic;                                        -- we_n
 			switches_export   : in    std_logic_vector(17 downto 0) := (others => 'X'); -- export
 			uart_RXD          : in    std_logic                     := 'X';             -- RXD
-			uart_TXD          : out   std_logic;                                        -- TXD
-			hctrig_export     : out   std_logic;                                        -- export
-			hcecho_export     : in    std_logic                     := 'X';             -- export
-			buzzer_export     : out   std_logic                                         -- export
+			uart_TXD          : out   std_logic                                         -- TXD
 		);
 	end component niosdramproc;
 
 	u0 : component niosdramproc
 		port map (
+			buzzer_export     => CONNECTED_TO_buzzer_export,     --     buzzer.export
 			clk_clk           => CONNECTED_TO_clk_clk,           --        clk.clk
+			hcecho_export     => CONNECTED_TO_hcecho_export,     --     hcecho.export
+			hctrig_export     => CONNECTED_TO_hctrig_export,     --     hctrig.export
 			hex0_export       => CONNECTED_TO_hex0_export,       --       hex0.export
 			hex1_export       => CONNECTED_TO_hex1_export,       --       hex1.export
 			hex2_export       => CONNECTED_TO_hex2_export,       --       hex2.export
@@ -63,9 +66,6 @@
 			sdram_wire_we_n   => CONNECTED_TO_sdram_wire_we_n,   --           .we_n
 			switches_export   => CONNECTED_TO_switches_export,   --   switches.export
 			uart_RXD          => CONNECTED_TO_uart_RXD,          --       uart.RXD
-			uart_TXD          => CONNECTED_TO_uart_TXD,          --           .TXD
-			hctrig_export     => CONNECTED_TO_hctrig_export,     --     hctrig.export
-			hcecho_export     => CONNECTED_TO_hcecho_export,     --     hcecho.export
-			buzzer_export     => CONNECTED_TO_buzzer_export      --     buzzer.export
+			uart_TXD          => CONNECTED_TO_uart_TXD           --           .TXD
 		);
 

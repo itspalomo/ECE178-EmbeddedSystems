@@ -1,6 +1,9 @@
 
 module niosdramproc (
+	buzzer_export,
 	clk_clk,
+	hcecho_export,
+	hctrig_export,
 	hex0_export,
 	hex1_export,
 	hex2_export,
@@ -27,12 +30,12 @@ module niosdramproc (
 	sdram_wire_we_n,
 	switches_export,
 	uart_RXD,
-	uart_TXD,
-	hctrig_export,
-	hcecho_export,
-	buzzer_export);	
+	uart_TXD);	
 
+	output		buzzer_export;
 	input		clk_clk;
+	input		hcecho_export;
+	output		hctrig_export;
 	output	[6:0]	hex0_export;
 	output	[6:0]	hex1_export;
 	output	[6:0]	hex2_export;
@@ -60,7 +63,4 @@ module niosdramproc (
 	input	[17:0]	switches_export;
 	input		uart_RXD;
 	output		uart_TXD;
-	output		hctrig_export;
-	input		hcecho_export;
-	output		buzzer_export;
 endmodule

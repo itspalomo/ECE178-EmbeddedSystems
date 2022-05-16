@@ -1,5 +1,8 @@
 	niosdramproc u0 (
+		.buzzer_export     (<connected-to-buzzer_export>),     //     buzzer.export
 		.clk_clk           (<connected-to-clk_clk>),           //        clk.clk
+		.hcecho_export     (<connected-to-hcecho_export>),     //     hcecho.export
+		.hctrig_export     (<connected-to-hctrig_export>),     //     hctrig.export
 		.hex0_export       (<connected-to-hex0_export>),       //       hex0.export
 		.hex1_export       (<connected-to-hex1_export>),       //       hex1.export
 		.hex2_export       (<connected-to-hex2_export>),       //       hex2.export
@@ -26,9 +29,6 @@
 		.sdram_wire_we_n   (<connected-to-sdram_wire_we_n>),   //           .we_n
 		.switches_export   (<connected-to-switches_export>),   //   switches.export
 		.uart_RXD          (<connected-to-uart_RXD>),          //       uart.RXD
-		.uart_TXD          (<connected-to-uart_TXD>),          //           .TXD
-		.hctrig_export     (<connected-to-hctrig_export>),     //     hctrig.export
-		.hcecho_export     (<connected-to-hcecho_export>),     //     hcecho.export
-		.buzzer_export     (<connected-to-buzzer_export>)      //     buzzer.export
+		.uart_TXD          (<connected-to-uart_TXD>)           //           .TXD
 	);
 

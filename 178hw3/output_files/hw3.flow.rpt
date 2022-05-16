@@ -1,5 +1,5 @@
 Flow report for hw3
-Tue May 10 01:35:08 2022
+Sun May 15 18:46:53 2022
 Quartus Prime Version 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition
 
 
@@ -40,17 +40,17 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------------------+
 ; Flow Summary                                                                              ;
 +------------------------------------+------------------------------------------------------+
-; Flow Status                        ; Successful - Tue May 10 01:35:03 2022                ;
+; Flow Status                        ; Successful - Sun May 15 18:46:46 2022                ;
 ; Quartus Prime Version              ; 17.1.1 Internal Build 593 12/11/2017 SJ Lite Edition ;
 ; Revision Name                      ; hw3                                                  ;
 ; Top-level Entity Name              ; hw3                                                  ;
 ; Family                             ; Cyclone IV E                                         ;
 ; Device                             ; EP4CE115F29C7                                        ;
 ; Timing Models                      ; Final                                                ;
-; Total logic elements               ; 5,090 / 114,480 ( 4 % )                              ;
-;     Total combinational functions  ; 4,545 / 114,480 ( 4 % )                              ;
-;     Dedicated logic registers      ; 3,068 / 114,480 ( 3 % )                              ;
-; Total registers                    ; 3284                                                 ;
+; Total logic elements               ; 5,449 / 114,480 ( 5 % )                              ;
+;     Total combinational functions  ; 4,845 / 114,480 ( 4 % )                              ;
+;     Dedicated logic registers      ; 3,366 / 114,480 ( 3 % )                              ;
+; Total registers                    ; 3582                                                 ;
 ; Total pins                         ; 220 / 529 ( 42 % )                                   ;
 ; Total virtual pins                 ; 0                                                    ;
 ; Total memory bits                  ; 100,288 / 3,981,312 ( 3 % )                          ;
@@ -64,7 +64,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 05/10/2022 01:33:40 ;
+; Start date & time ; 05/15/2022 18:45:13 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; hw3                 ;
 +-------------------+---------------------+
@@ -75,7 +75,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------------------------------+---------------+--------------+------------+
 ; Assignment Name                     ; Value                                                          ; Default Value ; Entity Name  ; Section Id ;
 +-------------------------------------+----------------------------------------------------------------+---------------+--------------+------------+
-; COMPILER_SIGNATURE_ID               ; 929353039616.165217162006880                                   ; --            ; --           ; --         ;
+; COMPILER_SIGNATURE_ID               ; 929353039616.165266551202508                                   ; --            ; --           ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                                             ; --            ; --           ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                                              ; --            ; --           ; --         ;
 ; MISC_FILE                           ; niosdramproc/synthesis/../niosdramproc.cmp                     ; --            ; --           ; --         ;
@@ -89,7 +89,7 @@ refer to the applicable agreement for further details.
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                                                   ; --            ; --           ; --         ;
 ; SLD_FILE                            ; niosdramproc/synthesis/niosdramproc.regmap                     ; --            ; --           ; --         ;
 ; SLD_FILE                            ; niosdramproc/synthesis/niosdramproc.debuginfo                  ; --            ; --           ; --         ;
-; SLD_INFO                            ; QSYS_NAME niosdramproc HAS_SOPCINFO 1 GENERATION_ID 1652171542 ; --            ; niosdramproc ; --         ;
+; SLD_INFO                            ; QSYS_NAME niosdramproc HAS_SOPCINFO 1 GENERATION_ID 1652665328 ; --            ; niosdramproc ; --         ;
 ; SOPCINFO_FILE                       ; niosdramproc/synthesis/../../niosdramproc.sopcinfo             ; --            ; --           ; --         ;
 ; SYNTHESIS_ONLY_QIP                  ; On                                                             ; --            ; --           ; --         ;
 +-------------------------------------+----------------------------------------------------------------+---------------+--------------+------------+
@@ -100,11 +100,11 @@ refer to the applicable agreement for further details.
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name               ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis      ; 00:00:47     ; 1.0                     ; 5106 MB             ; 00:01:05                           ;
-; Fitter                    ; 00:00:26     ; 1.1                     ; 6412 MB             ; 00:00:41                           ;
-; Assembler                 ; 00:00:04     ; 1.0                     ; 4711 MB             ; 00:00:04                           ;
-; TimeQuest Timing Analyzer ; 00:00:04     ; 1.4                     ; 5002 MB             ; 00:00:05                           ;
-; Total                     ; 00:01:21     ; --                      ; --                  ; 00:01:55                           ;
+; Analysis & Synthesis      ; 00:00:53     ; 1.0                     ; 5118 MB             ; 00:01:10                           ;
+; Fitter                    ; 00:00:29     ; 1.1                     ; 6414 MB             ; 00:00:43                           ;
+; Assembler                 ; 00:00:04     ; 1.0                     ; 4715 MB             ; 00:00:04                           ;
+; TimeQuest Timing Analyzer ; 00:00:05     ; 1.4                     ; 5006 MB             ; 00:00:06                           ;
+; Total                     ; 00:01:31     ; --                      ; --                  ; 00:02:03                           ;
 +---------------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 

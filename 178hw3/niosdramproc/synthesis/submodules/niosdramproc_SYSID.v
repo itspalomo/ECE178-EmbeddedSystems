@@ -49,7 +49,7 @@ module niosdramproc_SYSID (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1652171542 : 0;
+  assign readdata = address ? 1652665328 : 0;
 
 endmodule
 

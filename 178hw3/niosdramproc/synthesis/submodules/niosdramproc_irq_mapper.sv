@@ -20,9 +20,9 @@
 // Altera IRQ Mapper
 //
 // Parameters
-//   NUM_RCVRS        : 4
+//   NUM_RCVRS        : 6
 //   SENDER_IRW_WIDTH : 32
-//   IRQ_MAP          : 0:2,1:5,2:0,3:1
+//   IRQ_MAP          : 0:2,1:5,2:0,3:1,4:3,5:4
 //
 // -------------------------------------------------------
 
@@ -43,6 +43,8 @@ module niosdramproc_irq_mapper
     input                receiver1_irq,
     input                receiver2_irq,
     input                receiver3_irq,
+    input                receiver4_irq,
+    input                receiver5_irq,
 
     // -------------------
     // Command Source (Output)
@@ -58,6 +60,8 @@ module niosdramproc_irq_mapper
         sender_irq[5] = receiver1_irq;
         sender_irq[0] = receiver2_irq;
         sender_irq[1] = receiver3_irq;
+        sender_irq[3] = receiver4_irq;
+        sender_irq[4] = receiver5_irq;
     end
 
 endmodule

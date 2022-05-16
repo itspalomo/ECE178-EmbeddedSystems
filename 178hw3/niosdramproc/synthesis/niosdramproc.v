@@ -37,7 +37,7 @@ module niosdramproc (
 		output wire        uart_TXD           //           .TXD
 	);
 
-	wire         clocks_sys_clk_clk;                                          // clocks:sys_clk_clk -> [Hex_0:clk, Hex_1:clk, Hex_2:clk, Hex_3:clk, Hex_4:clk, Hex_5:clk, Hex_6:clk, Hex_7:clk, LEDG:clk, LEDR:clk, Push_buttons:clk, SYSID:clock, buzzer:clk, hcecho:clk, hctrig:clk, irq_mapper:clk, joseproc3:clk, jtag_uart_0:clk, mm_interconnect_0:clocks_sys_clk_clk, mot_0:clk, mot_1:clk, onchip_memory2_0:clk, rst_controller:clk, rst_controller_001:clk, sdram:clk, switches:clk, sys_clock_timer:clk, uart:clk]
+	wire         clocks_sys_clk_clk;                                          // clocks:sys_clk_clk -> [Hex_0:clk, Hex_1:clk, Hex_2:clk, Hex_3:clk, Hex_4:clk, Hex_5:clk, Hex_6:clk, Hex_7:clk, LEDG:clk, LEDR:clk, Push_buttons:clk, SYSID:clock, buzzer:clk, hcecho:clk, hctrig:clk, irq_mapper:clk, joseproc3:clk, jtag_uart_0:clk, mm_interconnect_0:clocks_sys_clk_clk, mot_0:clk, mot_1:clk, onchip_memory2_0:clk, rst_controller:clk, rst_controller_001:clk, sdram:clk, switches:clk, sys_clock_timer:clk, timer_0:clk, timer_1:clk, uart:clk]
 	wire  [31:0] joseproc3_data_master_readdata;                              // mm_interconnect_0:joseproc3_data_master_readdata -> joseproc3:d_readdata
 	wire         joseproc3_data_master_waitrequest;                           // mm_interconnect_0:joseproc3_data_master_waitrequest -> joseproc3:d_waitrequest
 	wire         joseproc3_data_master_debugaccess;                           // joseproc3:jtag_debug_module_debugaccess_to_roms -> mm_interconnect_0:joseproc3_data_master_debugaccess
@@ -176,12 +176,24 @@ module niosdramproc (
 	wire   [1:0] mm_interconnect_0_buzzer_s1_address;                         // mm_interconnect_0:buzzer_s1_address -> buzzer:address
 	wire         mm_interconnect_0_buzzer_s1_write;                           // mm_interconnect_0:buzzer_s1_write -> buzzer:write_n
 	wire  [31:0] mm_interconnect_0_buzzer_s1_writedata;                       // mm_interconnect_0:buzzer_s1_writedata -> buzzer:writedata
+	wire         mm_interconnect_0_timer_0_s1_chipselect;                     // mm_interconnect_0:timer_0_s1_chipselect -> timer_0:chipselect
+	wire  [15:0] mm_interconnect_0_timer_0_s1_readdata;                       // timer_0:readdata -> mm_interconnect_0:timer_0_s1_readdata
+	wire   [2:0] mm_interconnect_0_timer_0_s1_address;                        // mm_interconnect_0:timer_0_s1_address -> timer_0:address
+	wire         mm_interconnect_0_timer_0_s1_write;                          // mm_interconnect_0:timer_0_s1_write -> timer_0:write_n
+	wire  [15:0] mm_interconnect_0_timer_0_s1_writedata;                      // mm_interconnect_0:timer_0_s1_writedata -> timer_0:writedata
+	wire         mm_interconnect_0_timer_1_s1_chipselect;                     // mm_interconnect_0:timer_1_s1_chipselect -> timer_1:chipselect
+	wire  [15:0] mm_interconnect_0_timer_1_s1_readdata;                       // timer_1:readdata -> mm_interconnect_0:timer_1_s1_readdata
+	wire   [2:0] mm_interconnect_0_timer_1_s1_address;                        // mm_interconnect_0:timer_1_s1_address -> timer_1:address
+	wire         mm_interconnect_0_timer_1_s1_write;                          // mm_interconnect_0:timer_1_s1_write -> timer_1:write_n
+	wire  [15:0] mm_interconnect_0_timer_1_s1_writedata;                      // mm_interconnect_0:timer_1_s1_writedata -> timer_1:writedata
 	wire         irq_mapper_receiver0_irq;                                    // uart:irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                                    // jtag_uart_0:av_irq -> irq_mapper:receiver1_irq
 	wire         irq_mapper_receiver2_irq;                                    // sys_clock_timer:irq -> irq_mapper:receiver2_irq
 	wire         irq_mapper_receiver3_irq;                                    // Push_buttons:irq -> irq_mapper:receiver3_irq
+	wire         irq_mapper_receiver4_irq;                                    // timer_0:irq -> irq_mapper:receiver4_irq
+	wire         irq_mapper_receiver5_irq;                                    // timer_1:irq -> irq_mapper:receiver5_irq
 	wire  [31:0] joseproc3_d_irq_irq;                                         // irq_mapper:sender_irq -> joseproc3:d_irq
-	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [Hex_0:reset_n, Hex_1:reset_n, Hex_2:reset_n, Hex_3:reset_n, Hex_4:reset_n, Hex_5:reset_n, Hex_6:reset_n, Hex_7:reset_n, LEDG:reset_n, LEDR:reset_n, Push_buttons:reset_n, buzzer:reset_n, hcecho:reset_n, hctrig:reset_n, irq_mapper:reset, joseproc3:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:joseproc3_reset_n_reset_bridge_in_reset_reset, mot_0:reset_n, mot_1:reset_n, onchip_memory2_0:reset, rst_translator:in_reset, sdram:reset_n, switches:reset_n, sys_clock_timer:reset_n, uart:reset]
+	wire         rst_controller_reset_out_reset;                              // rst_controller:reset_out -> [Hex_0:reset_n, Hex_1:reset_n, Hex_2:reset_n, Hex_3:reset_n, Hex_4:reset_n, Hex_5:reset_n, Hex_6:reset_n, Hex_7:reset_n, LEDG:reset_n, LEDR:reset_n, Push_buttons:reset_n, buzzer:reset_n, hcecho:reset_n, hctrig:reset_n, irq_mapper:reset, joseproc3:reset_n, jtag_uart_0:rst_n, mm_interconnect_0:joseproc3_reset_n_reset_bridge_in_reset_reset, mot_0:reset_n, mot_1:reset_n, onchip_memory2_0:reset, rst_translator:in_reset, sdram:reset_n, switches:reset_n, sys_clock_timer:reset_n, timer_0:reset_n, timer_1:reset_n, uart:reset]
 	wire         rst_controller_reset_out_reset_req;                          // rst_controller:reset_req -> [joseproc3:reset_req, onchip_memory2_0:reset_req, rst_translator:reset_req_in]
 	wire         joseproc3_jtag_debug_module_reset_reset;                     // joseproc3:jtag_debug_module_resetrequest -> rst_controller:reset_in0
 	wire         clocks_reset_source_reset;                                   // clocks:reset_source_reset -> [rst_controller:reset_in1, rst_controller_001:reset_in0]
@@ -476,6 +488,28 @@ module niosdramproc (
 		.irq        (irq_mapper_receiver2_irq)                         //   irq.irq
 	);
 
+	niosdramproc_sys_clock_timer timer_0 (
+		.clk        (clocks_sys_clk_clk),                      //   clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),         // reset.reset_n
+		.address    (mm_interconnect_0_timer_0_s1_address),    //    s1.address
+		.writedata  (mm_interconnect_0_timer_0_s1_writedata),  //      .writedata
+		.readdata   (mm_interconnect_0_timer_0_s1_readdata),   //      .readdata
+		.chipselect (mm_interconnect_0_timer_0_s1_chipselect), //      .chipselect
+		.write_n    (~mm_interconnect_0_timer_0_s1_write),     //      .write_n
+		.irq        (irq_mapper_receiver4_irq)                 //   irq.irq
+	);
+
+	niosdramproc_sys_clock_timer timer_1 (
+		.clk        (clocks_sys_clk_clk),                      //   clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),         // reset.reset_n
+		.address    (mm_interconnect_0_timer_1_s1_address),    //    s1.address
+		.writedata  (mm_interconnect_0_timer_1_s1_writedata),  //      .writedata
+		.readdata   (mm_interconnect_0_timer_1_s1_readdata),   //      .readdata
+		.chipselect (mm_interconnect_0_timer_1_s1_chipselect), //      .chipselect
+		.write_n    (~mm_interconnect_0_timer_1_s1_write),     //      .write_n
+		.irq        (irq_mapper_receiver5_irq)                 //   irq.irq
+	);
+
 	niosdramproc_uart uart (
 		.clk        (clocks_sys_clk_clk),                                   //                clk.clk
 		.reset      (rst_controller_reset_out_reset),                       //              reset.reset
@@ -626,6 +660,16 @@ module niosdramproc (
 		.sys_clock_timer_s1_chipselect                 (mm_interconnect_0_sys_clock_timer_s1_chipselect),             //                                        .chipselect
 		.SYSID_control_slave_address                   (mm_interconnect_0_sysid_control_slave_address),               //                     SYSID_control_slave.address
 		.SYSID_control_slave_readdata                  (mm_interconnect_0_sysid_control_slave_readdata),              //                                        .readdata
+		.timer_0_s1_address                            (mm_interconnect_0_timer_0_s1_address),                        //                              timer_0_s1.address
+		.timer_0_s1_write                              (mm_interconnect_0_timer_0_s1_write),                          //                                        .write
+		.timer_0_s1_readdata                           (mm_interconnect_0_timer_0_s1_readdata),                       //                                        .readdata
+		.timer_0_s1_writedata                          (mm_interconnect_0_timer_0_s1_writedata),                      //                                        .writedata
+		.timer_0_s1_chipselect                         (mm_interconnect_0_timer_0_s1_chipselect),                     //                                        .chipselect
+		.timer_1_s1_address                            (mm_interconnect_0_timer_1_s1_address),                        //                              timer_1_s1.address
+		.timer_1_s1_write                              (mm_interconnect_0_timer_1_s1_write),                          //                                        .write
+		.timer_1_s1_readdata                           (mm_interconnect_0_timer_1_s1_readdata),                       //                                        .readdata
+		.timer_1_s1_writedata                          (mm_interconnect_0_timer_1_s1_writedata),                      //                                        .writedata
+		.timer_1_s1_chipselect                         (mm_interconnect_0_timer_1_s1_chipselect),                     //                                        .chipselect
 		.uart_avalon_rs232_slave_address               (mm_interconnect_0_uart_avalon_rs232_slave_address),           //                 uart_avalon_rs232_slave.address
 		.uart_avalon_rs232_slave_write                 (mm_interconnect_0_uart_avalon_rs232_slave_write),             //                                        .write
 		.uart_avalon_rs232_slave_read                  (mm_interconnect_0_uart_avalon_rs232_slave_read),              //                                        .read
@@ -642,6 +686,8 @@ module niosdramproc (
 		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
 		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
 		.receiver3_irq (irq_mapper_receiver3_irq),       // receiver3.irq
+		.receiver4_irq (irq_mapper_receiver4_irq),       // receiver4.irq
+		.receiver5_irq (irq_mapper_receiver5_irq),       // receiver5.irq
 		.sender_irq    (joseproc3_d_irq_irq)             //    sender.irq
 	);
 
